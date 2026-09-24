@@ -40,7 +40,7 @@
 <div class="space-y-4 font-mono text-xs"><div class="p-3 bg-red-950/20 border border-red-900/40 rounded-lg space-y-2"><span class="text-red-400 font-bold block border-b border-red-900/30 pb-1">Cara X (Rojo)</span><div><label class="block text-slate-300 mb-1">$\sigma_x$:</label><input type="number" id="m1_sx" value="80" step="10" oninput="updateModule1()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div><div class="grid grid-cols-2 gap-2"><div><label class="block text-slate-400 mb-1">$\tau_{xy}$:</label><input type="number" id="m1_txy" value="40" step="5" oninput="updateModule1()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div><div><label class="block text-slate-400 mb-1">$\tau_{xz}$:</label><input type="number" id="m1_txz" value="25" step="5" oninput="updateModule1()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div></div>
 <div class="p-3 bg-emerald-950/20 border border-emerald-900/40 rounded-lg space-y-2"><span class="text-emerald-400 font-bold block border-b border-emerald-900/30 pb-1">Cara Y (Verde)</span><div><label class="block text-slate-300 mb-1">$\sigma_y$:</label><input type="number" id="m1_sy" value="-30" step="10" oninput="updateModule1()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div><div class="grid grid-cols-2 gap-2"><div><label class="block text-slate-400 mb-1">$\tau_{yx}$:</label><input type="number" id="m1_tyx_mirror" value="40" disabled class="w-full bg-slate-900/50 border border-slate-800 rounded px-2 py-1.5 text-slate-500"></div><div><label class="block text-slate-400 mb-1">$\tau_{yz}$:</label><input type="number" id="m1_tyz" value="-15" step="5" oninput="updateModule1()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div></div>
 <div class="p-3 bg-blue-950/20 border border-blue-900/40 rounded-lg space-y-2"><span class="text-blue-400 font-bold block border-b border-blue-900/30 pb-1">Cara Z (Azul)</span><div><label class="block text-slate-300 mb-1">$\sigma_z$:</label><input type="number" id="m1_sz" value="50" step="10" oninput="updateModule1()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div><div class="grid grid-cols-2 gap-2"><div><label class="block text-slate-400 mb-1">$\tau_{zx}$:</label><input type="number" id="m1_tzx_mirror" value="25" disabled class="w-full bg-slate-900/50 border border-slate-800 rounded px-2 py-1.5 text-slate-500"></div><div><label class="block text-slate-400 mb-1">$\tau_{zy}$:</label><input type="number" id="m1_tzy_mirror" value="-15" disabled class="w-full bg-slate-900/50 border border-slate-800 rounded px-2 py-1.5 text-slate-500"></div></div></div></div></div>
-<div class="lg:col-span-8 flex flex-col gap-4"><div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Elemento Cúbico Interactivo</h3><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div><div id="plot-mod1" class="w-full h-[460px] bg-slate-950 rounded-lg"></div></div>
+<div class="lg:col-span-8 flex flex-col gap-4"><div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Elemento Cúbico Interactivo</h3><div class="flex items-center gap-2"><button onclick="resetView('plot-mod1')" title="Restablecer la vista inicial de este grafico" class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 px-2 py-1 rounded-md flex items-center gap-1.5 transition shrink-0"><i class="fa-solid fa-rotate-left text-cyan-400"></i>Vista</button><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div></div><div id="plot-mod1" class="w-full h-[460px] bg-slate-950 rounded-lg"></div></div>
 <div class="bg-slate-800/40 border border-slate-700/80 rounded-xl p-4 text-xs text-slate-300 leading-relaxed"><h4 class="font-bold text-slate-200 mb-2"><i class="fa-solid fa-book-bookmark text-indigo-400"></i> Convenio: σ positivo = tracción, τ_ij con i=normal, j=dirección. Simetría de Cauchy τ_ij=τ_ji.</h4></div></div></div></section>
 <section id="mod2" class="tab-content hidden flex flex-col gap-6"><div class="border-b border-slate-800 pb-3"><h2 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-table-cells-large text-indigo-400"></i>Módulo 2: Tensor, Invariantes y Proyección</h2><p class="text-sm text-slate-400">Análisis matricial, plano de corte y vectores tensionales.</p></div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6"><div class="lg:col-span-4 bg-slate-800/70 border border-slate-700 rounded-xl p-5 flex flex-col gap-4"><h3 class="font-semibold text-sm text-indigo-400 uppercase tracking-wider border-b border-slate-700 pb-2">Tensor [MPa] y n̂</h3>
@@ -68,7 +68,7 @@
 <div class="flex justify-between"><span class="text-emerald-400">σn mag:</span><span id="m2_sn" class="text-emerald-400 font-bold">0 MPa</span></div>
 <div class="flex justify-between"><span class="text-purple-400">τn vec:</span><span id="m2_tau_vec" class="text-purple-300">(0,0,0)</span></div>
 <div class="flex justify-between"><span class="text-purple-400">τn mag:</span><span id="m2_tn" class="text-amber-400 font-bold">0 MPa</span></div></div></div>
-<div class="lg:col-span-8 flex flex-col gap-4"><div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Elipsoide de Lamé, Plano y Vectores</h3><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div><div id="plot-mod2" class="w-full h-80 bg-slate-950 rounded-lg"></div>
+<div class="lg:col-span-8 flex flex-col gap-4"><div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Elipsoide de Lamé, Plano y Vectores</h3><div class="flex items-center gap-2"><button onclick="resetView('plot-mod2')" title="Restablecer la vista inicial de este grafico" class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 px-2 py-1 rounded-md flex items-center gap-1.5 transition shrink-0"><i class="fa-solid fa-rotate-left text-cyan-400"></i>Vista</button><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div></div><div id="plot-mod2" class="w-full h-80 bg-slate-950 rounded-lg"></div>
 <p class="text-[10px] text-slate-500 mt-2 leading-snug"><strong class="text-slate-400">Nota:</strong> el elipsoide de Lamé usa |σᵢ| como semiejes. Si algún σᵢ &lt; 0, el lugar geométrico real del extremo de T⃗(n̂) es un hiperboloide; el dibujo fuerza una superficie cerrada para la visualización.</p></div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
 <div class="bg-slate-800/70 border border-slate-700 p-4 rounded-xl space-y-2"><h4 class="font-bold text-indigo-400 uppercase mb-2">Invariantes y Von Mises</h4>
@@ -123,7 +123,7 @@
 <div id="plot-mod3-2d" class="w-full h-80 bg-slate-950 rounded-lg"></div></div>
 <div id="m3-3d-row" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div id="m3-mohr3d-card" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
-<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Visualización Mohr 3D</h3><span class="text-[10px] text-slate-400 font-mono">σn, τθ, τφ</span></div>
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Visualización Mohr 3D</h3><div class="flex items-center gap-2"><button onclick="resetView('plot-mod3-3d')" title="Restablecer la vista inicial de este grafico" class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 px-2 py-1 rounded-md flex items-center gap-1.5 transition shrink-0"><i class="fa-solid fa-rotate-left text-cyan-400"></i>Vista</button><span class="text-[10px] text-slate-400 font-mono">σn, τθ, τφ</span></div></div>
 <div class="flex flex-wrap items-center gap-3 pb-3 mb-3 border-b border-slate-700"><span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Modo:</span>
 <label class="flex items-center gap-1.5 cursor-pointer text-xs text-slate-200 hover:text-white"><input type="radio" name="m3_mohr3d_mode" value="A" checked onchange="setMohr3DMode('A')" class="w-3.5 h-3.5 accent-purple-500 cursor-pointer"><span><strong class="text-purple-400">A</strong> · Círculos</span></label>
 <label class="flex items-center gap-1.5 cursor-pointer text-xs text-slate-200 hover:text-white"><input type="radio" name="m3_mohr3d_mode" value="B" onchange="setMohr3DMode('B')" class="w-3.5 h-3.5 accent-amber-500 cursor-pointer"><span><strong class="text-amber-400">B</strong> · Superficie</span></label>
@@ -131,7 +131,7 @@
 <div id="plot-mod3-3d" class="w-full h-80 bg-slate-950 rounded-lg"></div>
 <div id="m3-mode-desc" class="mt-3 p-3 bg-slate-900/80 border border-slate-700/60 rounded-lg text-[11px] text-slate-300 leading-relaxed"></div></div>
 <div id="m3-cube-card" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
-<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Cubo — T(n̂), σₙ, τₙ</h3><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div>
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Cubo — T(n̂), σₙ, τₙ</h3><div class="flex items-center gap-2"><button onclick="resetView('plot-mod3-cube')" title="Restablecer la vista inicial de este grafico" class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 px-2 py-1 rounded-md flex items-center gap-1.5 transition shrink-0"><i class="fa-solid fa-rotate-left text-cyan-400"></i>Vista</button><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div></div>
 <div id="plot-mod3-cube" class="w-full h-80 bg-slate-950 rounded-lg"></div></div></div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs font-mono">
 <div class="bg-slate-800/70 border border-slate-700 p-3 rounded-lg text-center"><span class="text-slate-400 block mb-1">Centro C</span><span id="m3_center" class="text-white text-sm font-bold">0 MPa</span></div>
@@ -188,7 +188,7 @@
 <p id="m4_amp_warn" class="text-[10px] text-amber-400 leading-snug hidden pt-2 border-t border-slate-800">⚠ Amplificación saturada (amp = 5000). La deformación visible ya no es proporcional a la real; con estos valores las componentes son tan pequeñas que el cubo no se distinguiría del original.</p>
 </div></div>
 <div class="lg:col-span-8 flex flex-col gap-4">
-<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Cubo deformado y vector tensión T(n̂) sobre el plano π_n̂</h3><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div><div id="plot-mod4-3d" class="w-full h-80 bg-slate-950 rounded-lg"></div></div>
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Cubo deformado y vector tensión T(n̂) sobre el plano π_n̂</h3><div class="flex items-center gap-2"><button onclick="resetView('plot-mod4-3d')" title="Restablecer la vista inicial de este grafico" class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 px-2 py-1 rounded-md flex items-center gap-1.5 transition shrink-0"><i class="fa-solid fa-rotate-left text-cyan-400"></i>Vista</button><span class="text-xs text-slate-400"><i class="fa-solid fa-arrows-rotate mr-1"></i>Rotar 3D</span></div></div><div id="plot-mod4-3d" class="w-full h-80 bg-slate-950 rounded-lg"></div></div>
 <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><h3 class="font-semibold text-sm text-indigo-400 uppercase mb-3">Proyección 2D — T(n̂), σₙ y τₙ en cada plano</h3>
 <div class="grid grid-cols-3 gap-3">
 <div class="bg-slate-950 p-2 rounded-lg border border-slate-800"><span class="text-[11px] font-mono text-slate-400 block text-center mb-1">XY</span><div id="plot-mod4-xy" class="w-full h-40"></div></div>
@@ -197,50 +197,284 @@
 <div class="mt-3 p-2 bg-slate-900/60 border border-slate-700/60 rounded text-[10px] text-slate-400 flex items-center gap-4 justify-center">
 <span><span class="text-red-400">━</span> T (total)</span>
 <span><span class="text-emerald-400">━</span> σₙ (normal)</span>
-<span><span class="text-purple-400">━</span> τₙ (cortante)</span></div></div></div></div></section>
+<span><span class="text-purple-400">━</span> τₙ (cortante)</span></div></div>
+<div id="m4-mohr-opts" class="bg-slate-800/70 border border-slate-700 rounded-xl px-4 py-2.5 flex flex-col gap-2">
+<div class="flex items-center justify-between flex-wrap gap-3"><span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Círculos de Mohr comparados</span>
+<div class="flex items-center gap-5 flex-wrap">
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m4_show_mohr_s" checked onchange="updateModule4()" class="w-4 h-4 accent-indigo-500 rounded"> <span class="text-indigo-300">Tensiones σ</span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m4_show_mohr_e" checked onchange="updateModule4()" class="w-4 h-4 accent-emerald-500 rounded"> <span class="text-emerald-300">Deformaciones ε</span></label>
+</div></div>
+<div data-mohr-detail class="flex items-center justify-between flex-wrap gap-x-6 gap-y-2 pt-2 border-t border-slate-700/60 transition-opacity">
+<div class="flex items-center gap-3 flex-wrap"><span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Estado</span>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m4_mohr_state" value="plane" onchange="updateModule4()" class="w-3.5 h-3.5 accent-indigo-500 cursor-pointer">Plano (XY)</label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m4_mohr_state" value="triax" checked onchange="updateModule4()" class="w-3.5 h-3.5 accent-purple-500 cursor-pointer">Triaxial</label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m4_mohr_state" value="both" onchange="updateModule4()" class="w-3.5 h-3.5 accent-cyan-500 cursor-pointer">Ambos</label></div>
+<div class="flex items-center gap-4 flex-wrap">
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m4_mohr_xyz" checked onchange="updateModule4()" class="w-4 h-4 accent-red-500 rounded"> <span class="text-red-400">Caras xyz</span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m4_mohr_princ" checked onchange="updateModule4()" class="w-4 h-4 accent-pink-500 rounded"> <span class="text-pink-400">Principales</span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m4_mohr_n" checked onchange="updateModule4()" class="w-4 h-4 accent-emerald-500 rounded"> <span class="text-emerald-300">Punto n̂</span></label>
+</div></div></div>
+<div id="m4-mohr-row" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<div id="m4-mohr-s-card" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-indigo-300"><i class="fa-solid fa-circle-notch mr-1"></i>Mohr de tensiones</h3><span class="text-[10px] text-slate-400 font-mono">σ — τ [MPa]</span></div>
+<div id="plot-mod4-mohr-s" class="w-full h-80 bg-slate-950 rounded-lg"></div></div>
+<div id="m4-mohr-e-card" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-emerald-300"><i class="fa-solid fa-circle-notch mr-1"></i>Mohr de deformaciones</h3><span class="text-[10px] text-slate-400 font-mono">ε — γ/2 [µε]</span></div>
+<div id="plot-mod4-mohr-e" class="w-full h-80 bg-slate-950 rounded-lg"></div></div></div></div></div></section>
 
-<section id="mod5" class="tab-content hidden flex flex-col gap-6"><div class="border-b border-slate-800 pb-3"><h2 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-microchip text-cyan-400"></i>Módulo 5: Rosetas de Galgas</h2></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6"><div class="lg:col-span-4 bg-slate-800/70 border border-slate-700 rounded-xl p-5 flex flex-col gap-4"><h3 class="font-semibold text-sm text-indigo-400 uppercase border-b border-slate-700 pb-2">Ángulos y Lecturas</h3>
-<div class="text-xs"><label class="block text-slate-300 mb-1 font-medium">Prediseños:</label><select id="m5_preset" onchange="setRosettePreset()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="custom">Personalizada</option><option value="rect_0_45_90" selected>Rectangular (0-45-90)</option><option value="rect_45_90_135">Oblicua (45-90-135)</option><option value="delta_0_60_120">Delta (0-60-120)</option></select></div>
-<div class="grid grid-cols-3 gap-2 font-mono text-xs"><div><label class="text-slate-400 block">θA</label><input type="number" id="m5_thA" value="0" oninput="markCustom();updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-1.5 py-1 text-white"></div><div><label class="text-slate-400 block">θB</label><input type="number" id="m5_thB" value="45" oninput="markCustom();updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-1.5 py-1 text-white"></div><div><label class="text-slate-400 block">θC</label><input type="number" id="m5_thC" value="90" oninput="markCustom();updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-1.5 py-1 text-white"></div></div>
-<div class="space-y-2 font-mono text-xs"><div><label class="text-slate-400 block">εA [με]:</label><input type="number" id="m5_eA" value="250" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div><div><label class="text-slate-400 block">εB [με]:</label><input type="number" id="m5_eB" value="433" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div><div><label class="text-slate-400 block">εC [με]:</label><input type="number" id="m5_eC" value="-250" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div></div>
-<div class="p-3 bg-slate-900/80 rounded-lg border border-slate-700/60 space-y-2 text-xs"><span class="text-indigo-300 font-bold block border-b border-slate-800 pb-1">Hooke (E,ν):</span>
-<div class="grid grid-cols-2 gap-2 font-mono"><div><label class="text-slate-400 block">E [GPa]</label><input type="number" id="m5_emod" value="210" oninput="updateModule5()" class="w-full bg-slate-950 border border-slate-800 rounded px-1 py-1 text-white"></div><div><label class="text-slate-400 block">ν</label><input type="number" id="m5_nu" value="0.3" step="0.05" oninput="updateModule5()" class="w-full bg-slate-950 border border-slate-800 rounded px-1 py-1 text-white"></div></div><p class="text-[10px] text-amber-300/80 pt-1 border-t border-slate-800">Hipótesis: tensión plana σz=0 (superficie libre).</p></div></div>
+<section id="mod5" class="tab-content hidden flex flex-col gap-6">
+<div class="border-b border-slate-800 pb-3 flex items-start justify-between gap-4 flex-wrap">
+<div><h2 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-microchip text-cyan-400"></i>Módulo 5: Rosetas de Galgas</h2>
+<p class="text-sm text-slate-400">Lecturas ⇄ tensor de deformación, círculo de Mohr completo y metodología recomendada según la disposición de las galgas.</p></div>
+<div class="flex items-center gap-1 bg-slate-900 border border-slate-700 rounded-lg p-1 shrink-0">
+<button id="m5_btn_direct" onclick="setM5Mode('direct')" class="text-xs px-3 py-1.5 rounded-md font-medium transition flex items-center gap-2"><i class="fa-solid fa-arrow-right-long"></i>Galgas → Tensor</button>
+<button id="m5_btn_inverse" onclick="setM5Mode('inverse')" class="text-xs px-3 py-1.5 rounded-md font-medium transition flex items-center gap-2"><i class="fa-solid fa-arrow-left-long"></i>Tensor → Galgas</button>
+</div></div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-4 bg-slate-800/70 border border-slate-700 rounded-xl p-5 flex flex-col gap-4">
+<div id="m5_mode_hint" class="text-[11px] leading-snug rounded-lg px-3 py-2 border"></div>
+
+<div><h3 class="font-semibold text-sm text-indigo-400 uppercase tracking-wider border-b border-slate-700 pb-2 mb-2">Disposición</h3>
+<label class="block text-slate-300 mb-1 text-xs font-medium">Prediseños:</label>
+<select id="m5_preset" onchange="setRosettePreset()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="custom">Personalizada</option><option value="rect_0_45_90" selected>Rectangular (0-45-90)</option><option value="rect_45_90_135">Oblicua (45-90-135)</option><option value="delta_0_60_120">Delta (0-60-120)</option><option value="rot_30_75_120">Rectangular girada 30º (30-75-120)</option></select>
+<div class="grid grid-cols-3 gap-2 font-mono text-xs mt-2">
+<div><label class="text-red-400 block">θA [º]</label><input type="number" id="m5_thA" value="0" step="5" oninput="markCustom();updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-emerald-400 block">θB [º]</label><input type="number" id="m5_thB" value="45" step="5" oninput="markCustom();updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-blue-400 block">θC [º]</label><input type="number" id="m5_thC" value="90" step="5" oninput="markCustom();updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div>
+<p class="text-[10px] text-slate-500 leading-snug mt-1.5">θ se mide en sentido antihorario desde el eje +x. Dos direcciones separadas 180º son la misma galga.</p></div>
+
+<div id="m5-box-lect" class="rounded-lg border p-3 space-y-2">
+<span id="m5-lbl-lect" class="text-xs uppercase tracking-wider font-semibold block"></span>
+<div class="space-y-2 font-mono text-xs">
+<div><label class="text-red-400 block mb-1">εA [µε]</label><input type="number" id="m5_eA" value="250" step="10" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-emerald-400 block mb-1">εB [µε]</label><input type="number" id="m5_eB" value="433" step="10" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-blue-400 block mb-1">εC [µε]</label><input type="number" id="m5_eC" value="-250" step="10" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div></div>
+
+<div id="m5-box-tens" class="rounded-lg border p-3 space-y-2">
+<span id="m5-lbl-tens" class="text-xs uppercase tracking-wider font-semibold block"></span>
+<div class="grid grid-cols-3 gap-2 font-mono text-xs">
+<div><label class="text-slate-400 block mb-1">εx</label><input type="number" id="m5_tex" value="250" step="10" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">εy</label><input type="number" id="m5_tey" value="-250" step="10" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">γxy</label><input type="number" id="m5_tgxy" value="866" step="10" oninput="updateModule5()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div>
+<p class="text-[10px] text-slate-500 leading-snug">Valores en µε (×10⁻⁶). Recuerda: el tensor lleva ε<sub>xy</sub> = γ<sub>xy</sub>/2.</p></div>
+
+<p id="m5_sing_warn" class="text-[11px] text-rose-400 leading-snug hidden bg-rose-950/30 border border-rose-900/50 rounded p-2">⚠ Las tres direcciones no son independientes (dos galgas en la misma dirección): el sistema 3×3 es singular y no puede resolverse.</p>
+
+<div class="p-3 bg-slate-900/80 rounded-lg border border-slate-700/60 space-y-2 text-xs"><span class="text-indigo-300 font-bold block border-b border-slate-800 pb-1">Hooke (E, ν):</span>
+<div class="grid grid-cols-2 gap-2 font-mono"><div><label class="text-slate-400 block">E [GPa]</label><input type="number" id="m5_emod" value="210" oninput="updateModule5()" class="w-full bg-slate-950 border border-slate-800 rounded px-1 py-1 text-white"></div><div><label class="text-slate-400 block">ν</label><input type="number" id="m5_nu" value="0.3" step="0.05" oninput="updateModule5()" class="w-full bg-slate-950 border border-slate-800 rounded px-1 py-1 text-white"></div></div>
+<p class="text-[10px] text-amber-300/80 pt-1 border-t border-slate-800">Hipótesis: tensión plana σ<sub>z</sub> = 0 (superficie libre). La galga está pegada fuera, así que ε<sub>z</sub> ≠ 0.</p></div>
+</div>
+
 <div class="lg:col-span-8 flex flex-col gap-4">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><h3 class="font-semibold text-sm text-slate-200 mb-1">Esquema</h3><div id="plot-mod5-schema" class="w-full h-56 bg-slate-950 rounded-lg"></div></div>
-<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><h3 class="font-semibold text-sm text-slate-200 mb-1">Mohr Deformaciones</h3><div id="plot-mod5-mohr" class="w-full h-56 bg-slate-950 rounded-lg"></div></div></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
-<div class="bg-slate-800/70 border border-slate-700 p-4 rounded-xl space-y-1.5"><h4 class="font-bold text-indigo-400 uppercase mb-2">Tensor</h4>
-<div class="flex justify-between border-b border-slate-700 pb-1"><span class="text-slate-400">εx:</span><span id="m5_ex" class="text-white font-bold">0</span></div>
-<div class="flex justify-between border-b border-slate-700 pb-1"><span class="text-slate-400">εy:</span><span id="m5_ey" class="text-white font-bold">0</span></div>
-<div class="flex justify-between border-b border-slate-700 pb-1"><span class="text-slate-400">γxy:</span><span id="m5_gxy" class="text-amber-400 font-bold">0</span></div>
-<div class="flex justify-between"><span class="text-slate-400">γmáx:</span><span id="m5_gmax" class="text-emerald-400 font-bold">0</span></div></div>
-<div class="bg-slate-800/70 border border-slate-700 p-4 rounded-xl space-y-1.5"><h4 class="font-bold text-indigo-400 uppercase mb-2">Principales</h4>
-<div class="flex justify-between border-b border-slate-700 pb-1"><span class="text-slate-400">ε1:</span><span id="m5_e1" class="text-emerald-300 font-bold">0</span></div>
-<div class="flex justify-between border-b border-slate-700 pb-1"><span class="text-slate-400">ε2:</span><span id="m5_e2" class="text-emerald-300 font-bold">0</span></div>
-<div class="flex justify-between border-b border-slate-700 pb-1"><span class="text-slate-400">θp:</span><span id="m5_tp" class="text-amber-300 font-bold">0º</span></div>
-<div class="flex justify-between items-center"><span class="text-slate-400">σ1: <span class="text-[10px] text-slate-500 cursor-help" title="Hipótesis: tensión plana (σz = 0). Fórmula: σ₁ = E/(1−ν²)·(ε₁ + ν·ε₂). Válida para galgas sobre superficie libre.">ⓘ</span></span><span id="m5_sig1" class="text-indigo-300 font-bold">0 MPa</span></div></div></div></div></div></section>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Esquema en la pieza</h3><span class="text-[10px] text-slate-400 font-mono">θ antihorario desde +x</span></div>
+<div id="plot-mod5-schema" class="w-full h-96 bg-slate-950 rounded-lg"></div></div>
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-2 flex-wrap gap-2"><h3 class="font-semibold text-sm text-slate-200">Círculo de Mohr de deformaciones</h3><span class="text-[10px] text-slate-400 font-mono">ε — γ/2 [µε]</span></div>
+<div class="flex items-center gap-3 flex-wrap pb-2 mb-2 border-b border-slate-700/60">
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m5_show_gauges" checked onchange="updateModule5()" class="w-3.5 h-3.5 accent-amber-500 rounded"> <span class="text-amber-400">Galgas</span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m5_show_princ" checked onchange="updateModule5()" class="w-3.5 h-3.5 accent-pink-500 rounded"> <span class="text-pink-400">Principales</span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m5_show_gmax" checked onchange="updateModule5()" class="w-3.5 h-3.5 accent-purple-500 rounded"> <span class="text-purple-400">γmáx</span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="checkbox" id="m5_show_arcs" checked onchange="updateModule5()" class="w-3.5 h-3.5 accent-cyan-500 rounded"> <span class="text-cyan-400">Arcos 2θ</span></label>
+</div>
+<div id="plot-mod5-mohr" class="w-full h-96 bg-slate-950 rounded-lg"></div>
+<p class="text-[10px] text-slate-500 leading-snug mt-2">Eje γ/2 positivo hacia arriba y punto X en (ε<sub>x</sub>, −γ<sub>xy</sub>/2): así θ y 2θ giran en el mismo sentido. En las diapositivas el eje se dibuja positivo hacia abajo con X en (ε<sub>x</sub>, +γ<sub>xy</sub>/2) — <strong class="text-slate-400">es el mismo dibujo</strong>, reflejado.</p></div></div>
 
-<section id="mod6" class="tab-content hidden flex flex-col gap-6"><div class="border-b border-slate-800 pb-3"><h2 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-vial text-purple-400"></i>Módulo 6: Depósitos de Pared Delgada</h2></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6"><div class="lg:col-span-4 bg-slate-800/70 border border-slate-700 rounded-xl p-5 flex flex-col gap-4"><h3 class="font-semibold text-sm text-indigo-400 uppercase border-b border-slate-700 pb-2">Material y Geometría</h3>
-<div class="text-xs"><label class="block text-slate-300 mb-1">Material:</label><select id="m6_mat" onchange="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="275">Acero S275</option><option value="355">Acero S355</option><option value="210">Aluminio 210</option><option value="850">Titanio G5</option></select></div>
-<div class="space-y-3 font-mono text-xs">
-<div><label class="block text-slate-400 mb-1">p [MPa]:</label><input type="number" id="m6_p" value="2.5" step="0.5" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div>
-<div><label class="block text-slate-400 mb-1">r [mm]:</label><input type="number" id="m6_r" value="1200" step="50" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div>
-<div><label class="block text-slate-400 mb-1">e [mm]:</label><input type="number" id="m6_e" value="12" step="1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div>
-<div><label class="block text-slate-400 mb-1">FS:</label><input type="number" id="m6_fs" value="1.5" step="0.1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-white"></div>
-<div><label class="block text-amber-400 mb-1 flex items-center gap-1">α soldadura [º] <span class="text-[10px] text-slate-500 cursor-help" title="Ángulo medido desde el eje axial del cilindro. α=0° → soldadura longitudinal; α=90° → circunferencial.">ⓘ</span></label><input type="number" id="m6_alpha" value="45" min="0" max="90" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-amber-300"></div></div></div>
-<div class="lg:col-span-8 flex flex-col gap-4"><div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4"><h3 class="font-semibold text-sm text-slate-200 mb-2">Von Mises vs Límite Admisible</h3><div id="plot-mod6" class="w-full h-64 bg-slate-950 rounded-lg"></div></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
-<div class="bg-slate-800/70 border border-slate-700 p-4 rounded-xl space-y-2"><div class="flex justify-between items-center border-b border-slate-700 pb-1.5"><h4 class="font-bold text-red-400 uppercase">Cilíndrico</h4><span id="m6_check_cyl" class="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">r/e = ?</span></div>
-<div class="flex justify-between"><span class="text-slate-400">σVM:</span><span id="m6_cyl_vm" class="text-white font-bold">0 MPa</span></div>
-<div class="flex justify-between"><span class="text-slate-400">eMin:</span><span id="m6_cyl_emin" class="text-amber-300 font-bold">0 mm</span></div>
-<div class="flex justify-between"><span class="text-slate-400">Estado:</span><span id="m6_cyl_status" class="font-bold">—</span></div></div>
-<div class="bg-slate-800/70 border border-slate-700 p-4 rounded-xl space-y-2"><div class="flex justify-between items-center border-b border-slate-700 pb-1.5"><h4 class="font-bold text-indigo-400 uppercase">Esférico</h4><span id="m6_check_sph" class="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">r/e = ?</span></div>
-<div class="flex justify-between"><span class="text-slate-400">σVM:</span><span id="m6_sph_vm" class="text-white font-bold">0 MPa</span></div>
-<div class="flex justify-between"><span class="text-slate-400">eMin:</span><span id="m6_sph_emin" class="text-amber-300 font-bold">0 mm</span></div>
-<div class="flex justify-between"><span class="text-slate-400">Estado:</span><span id="m6_sph_status" class="font-bold">—</span></div></div></div>
-<div class="bg-slate-800/40 border border-slate-700/80 p-4 rounded-xl flex justify-between items-center text-xs font-mono"><span class="text-amber-400 font-bold"><i class="fa-solid fa-dumpster-fire"></i> Soldadura (α):</span><div class="flex gap-4"><span class="text-slate-300">σn: <strong id="m6_weld_sn" class="text-white">0 MPa</strong></span><span class="text-slate-300">τt: <strong id="m6_weld_tau" class="text-amber-300">0 MPa</strong></span></div></div></div></div></section>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 text-xs font-mono">
+<div class="bg-slate-800/70 border border-slate-700 p-3 rounded-xl space-y-1.5"><h4 class="font-bold text-indigo-400 uppercase mb-1.5 text-[11px]">Tensor plano</h4>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">εx:</span><span id="m5_ex" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">εy:</span><span id="m5_ey" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">γxy:</span><span id="m5_gxy" class="text-amber-400 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">εxy=γ/2:</span><span id="m5_exy" class="text-amber-300 font-bold">0</span></div></div>
+<div class="bg-slate-800/70 border border-slate-700 p-3 rounded-xl space-y-1.5"><h4 class="font-bold text-indigo-400 uppercase mb-1.5 text-[11px]">Círculo</h4>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">Centro C:</span><span id="m5_C" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">Radio R:</span><span id="m5_R" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">γmáx plano:</span><span id="m5_gmax" class="text-purple-300 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">θp:</span><span id="m5_tp" class="text-amber-300 font-bold">0º</span></div></div>
+<div class="bg-slate-800/70 border border-slate-700 p-3 rounded-xl space-y-1.5"><h4 class="font-bold text-pink-400 uppercase mb-1.5 text-[11px]">Principales</h4>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">ε1:</span><span id="m5_e1" class="text-pink-200 font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">ε2:</span><span id="m5_e2" class="text-pink-200 font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">ε3=εz:</span><span id="m5_e3" class="text-cyan-300 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">γmáx abs:</span><span id="m5_gmaxabs" class="text-purple-300 font-bold">0</span></div></div>
+<div class="bg-slate-800/70 border border-slate-700 p-3 rounded-xl space-y-1.5"><h4 class="font-bold text-emerald-400 uppercase mb-1.5 text-[11px]">Tensiones (σz=0)</h4>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">σ1:</span><span id="m5_sig1" class="text-emerald-300 font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">σ2:</span><span id="m5_sig2" class="text-emerald-300 font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">τmáx abs:</span><span id="m5_taumax" class="text-amber-300 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">σVM:</span><span id="m5_svm" class="text-white font-bold">0</span></div></div></div>
+</div></div>
+
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<h3 class="font-semibold text-sm text-cyan-300 uppercase tracking-wider border-b border-slate-700 pb-2 mb-3"><i class="fa-solid fa-route mr-1"></i>Metodología recomendada para esta disposición</h3>
+<div id="m5-metodo" class="space-y-2.5 text-xs text-slate-300 leading-relaxed"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<h3 class="font-semibold text-sm text-indigo-300 uppercase tracking-wider border-b border-slate-700 pb-2 mb-3"><i class="fa-solid fa-square-root-variable mr-1"></i>Ecuación general de la galga</h3>
+<div class="text-xs text-slate-300 leading-relaxed space-y-2">
+<p class="font-mono text-[12px] bg-slate-950/70 border border-slate-800 rounded p-2.5 text-center text-cyan-200">ε<sub>n</sub>(θ) = (ε<sub>x</sub>+ε<sub>y</sub>)/2 + ((ε<sub>x</sub>−ε<sub>y</sub>)/2)·cos 2θ + (γ<sub>xy</sub>/2)·sen 2θ</p>
+<p>La galga mide <strong>solo la abscisa</strong> del punto del círculo situado a 2θ de X. Una ecuación por galga → sistema 3×3 en ε<sub>x</sub>, ε<sub>y</sub>, γ<sub>xy</sub>. Es el método universal: siempre vale, con cualquier disposición.</p>
+<div id="m5-sistema" class="font-mono text-[11px] space-y-1"></div></div></div>
+<div class="bg-rose-950/20 border border-rose-900/40 rounded-xl p-4">
+<h3 class="font-semibold text-sm text-rose-300 uppercase tracking-wider border-b border-rose-900/40 pb-2 mb-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Errores típicos</h3>
+<ul class="text-xs text-slate-300 leading-relaxed space-y-1.5 list-disc pl-4">
+<li>Confundir γ<sub>xy</sub> con γ<sub>xy</sub>/2: el eje vertical es γ/2 porque ε<sub>xy</sub> = γ<sub>xy</sub>/2. <strong>La regla 2 da γ/2</strong>, hay que multiplicar por 2.</li>
+<li>Olvidar que el ángulo se duplica: 45º en la pieza son 90º en el círculo, y 90º son 180º.</li>
+<li>Tomar θ en sentido equivocado: se mide antihorario desde +x. Una galga a −45º cambia el signo de la contribución de γ<sub>xy</sub>.</li>
+</ul></div></div></div>
+</section>
+
+<section id="mod6" class="tab-content hidden flex flex-col gap-6">
+<div class="border-b border-slate-800 pb-3 flex items-start justify-between gap-4 flex-wrap">
+<div><h2 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-vial text-purple-400"></i>Módulo 6: Depósitos de Pared Delgada</h2>
+<p class="text-sm text-slate-400">Laplace, criterios de fallo comparados, círculos de Mohr del punto, cordón de soldadura y unión atornillada.</p></div>
+<div class="flex items-center gap-1 bg-slate-900 border border-slate-700 rounded-lg p-1 shrink-0 flex-wrap">
+<button id="m6_btn_check"  onclick="setM6Mode('check')"  class="text-xs px-3 py-1.5 rounded-md font-medium transition">Comprobar</button>
+<button id="m6_btn_design" onclick="setM6Mode('design')" class="text-xs px-3 py-1.5 rounded-md font-medium transition">Dimensionar e</button>
+<button id="m6_btn_pmax"   onclick="setM6Mode('pmax')"   class="text-xs px-3 py-1.5 rounded-md font-medium transition">Presión admisible</button>
+<button id="m6_btn_gauge"  onclick="setM6Mode('gauge')"  class="text-xs px-3 py-1.5 rounded-md font-medium transition">Desde galga</button>
+</div></div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div id="m6_mode_hint" class="text-[11px] leading-snug rounded-lg px-3 py-2 border"></div>
+
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 space-y-3">
+<h3 class="font-semibold text-sm text-indigo-400 uppercase tracking-wider border-b border-slate-700 pb-2">Geometría</h3>
+<div class="flex items-center gap-1 bg-slate-900 border border-slate-700 rounded-lg p-1">
+<button id="m6_btn_cyl" onclick="setM6Geo('cyl')" class="flex-1 text-xs px-2 py-1.5 rounded-md font-medium transition"><i class="fa-solid fa-database mr-1"></i>Cilíndrico</button>
+<button id="m6_btn_sph" onclick="setM6Geo('sph')" class="flex-1 text-xs px-2 py-1.5 rounded-md font-medium transition"><i class="fa-regular fa-circle mr-1"></i>Esférico</button></div>
+<div class="text-xs"><label class="block text-slate-300 mb-1 font-medium">Definir el radio por:</label>
+<select id="m6_rmode" onchange="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="r" selected>Radio interior r [mm]</option><option value="d">Diámetro interior Ø [mm]</option><option value="V">Volumen V [m³]</option></select></div>
+<div class="grid grid-cols-2 gap-2 font-mono text-xs">
+<div id="m6_wrap_r"><label class="text-slate-400 block mb-1">r [mm]</label><input type="number" id="m6_r" value="1250" step="50" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div id="m6_wrap_d" class="hidden"><label class="text-slate-400 block mb-1">Ø [mm]</label><input type="number" id="m6_d" value="2500" step="100" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div id="m6_wrap_V" class="hidden"><label class="text-slate-400 block mb-1">V [m³]</label><input type="number" id="m6_V" value="10" step="1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div id="m6_wrap_h" class="hidden"><label class="text-slate-400 block mb-1">Altura h</label><select id="m6_hrel" onchange="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="2" selected>h = 2r (apuntes)</option><option value="4">h = 4r</option></select></div>
+<div><label class="text-slate-400 block mb-1">e [mm]</label><input type="number" id="m6_e" value="15" step="1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">p [MPa]</label><input type="number" id="m6_p" value="8" step="0.5" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+</div>
+<p id="m6_geo_info" class="text-[10px] text-slate-500 leading-snug font-mono"></p></div>
+
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 space-y-3">
+<h3 class="font-semibold text-sm text-indigo-400 uppercase tracking-wider border-b border-slate-700 pb-2">Material y criterio</h3>
+<div class="text-xs"><label class="block text-slate-300 mb-1 font-medium">Tensión admisible:</label>
+<select id="m6_admmode" onchange="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="fs" selected>σY del material / FS</option><option value="dir">σadm directa</option></select></div>
+<div id="m6_wrap_fs" class="space-y-2">
+<select id="m6_mat" onchange="onM6Mat()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="275">Acero S275 (σY = 275)</option><option value="355" selected>Acero S355 (σY = 355)</option><option value="210">Aluminio (σY = 210)</option><option value="850">Titanio G5 (σY = 850)</option><option value="custom">Personalizado…</option></select>
+<div class="grid grid-cols-2 gap-2 font-mono text-xs">
+<div><label class="text-slate-400 block mb-1">σY [MPa]</label><input type="number" id="m6_sy" value="355" step="5" oninput="onM6Mat(true)" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">FS</label><input type="number" id="m6_fs" value="1.5" step="0.1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div></div>
+<div id="m6_wrap_dir" class="hidden font-mono text-xs"><label class="text-slate-400 block mb-1">σadm [MPa]</label><input type="number" id="m6_sadm" value="150" step="5" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div class="pt-2 border-t border-slate-700/60"><span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block mb-1.5">Criterio de fallo</span>
+<div class="flex flex-col gap-1">
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m6_crit" value="vm" checked onchange="updateModule6()" class="w-3.5 h-3.5 accent-emerald-500 cursor-pointer"><span>von Mises &nbsp;<span class="text-slate-500">σVM ≤ σadm</span></span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m6_crit" value="tresca" onchange="updateModule6()" class="w-3.5 h-3.5 accent-amber-500 cursor-pointer"><span>Tresca &nbsp;<span class="text-slate-500">σ₁−σ₃ ≤ σadm</span></span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m6_crit" value="smax" onchange="updateModule6()" class="w-3.5 h-3.5 accent-cyan-500 cursor-pointer"><span>Tensión normal máx. &nbsp;<span class="text-slate-500">|σ|máx ≤ σadm</span></span></label></div></div>
+<div class="pt-2 border-t border-slate-700/60"><span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block mb-1.5">Punto analizado</span>
+<div class="flex flex-col gap-1">
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m6_face" value="out" checked onchange="updateModule6()" class="w-3.5 h-3.5 accent-indigo-500 cursor-pointer"><span>Superficie exterior &nbsp;<span class="text-slate-500">σ₃ = 0</span></span></label>
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-slate-200"><input type="radio" name="m6_face" value="in" onchange="updateModule6()" class="w-3.5 h-3.5 accent-rose-500 cursor-pointer"><span>Superficie interior &nbsp;<span class="text-slate-500">σ₃ = −p</span></span></label></div></div></div>
+
+<div id="m6_card_gauge" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 space-y-3 hidden">
+<h3 class="font-semibold text-sm text-cyan-300 uppercase tracking-wider border-b border-slate-700 pb-2">Galga extensométrica</h3>
+<div class="text-xs"><select id="m6_gmode" onchange="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-white text-xs"><option value="dl" selected>Dato: L₀ y ΔL</option><option value="eps">Dato: ε [µε]</option></select></div>
+<div id="m6_wrap_dl" class="grid grid-cols-2 gap-2 font-mono text-xs">
+<div><label class="text-slate-400 block mb-1">L₀ [mm]</label><input type="number" id="m6_L0" value="20" step="1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">ΔL [mm]</label><input type="number" id="m6_dL" value="0.012" step="0.001" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div>
+<div id="m6_wrap_eps" class="hidden font-mono text-xs"><label class="text-slate-400 block mb-1">ε [µε]</label><input type="number" id="m6_eps" value="600" step="10" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div class="grid grid-cols-2 gap-2 font-mono text-xs">
+<div><label class="text-slate-400 block mb-1">E [GPa]</label><input type="number" id="m6_E" value="200" step="5" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">ν</label><input type="number" id="m6_nu" value="0.3" step="0.05" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div></div>
+<div id="m6_wrap_beta" class="font-mono text-xs"><label class="text-slate-400 block mb-1">Dirección de la galga β [º]</label><input type="number" id="m6_beta" value="90" step="15" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white">
+<p class="text-[10px] text-slate-500 leading-snug mt-1">β desde el eje axial: 0º galga axial, 90º galga circunferencial.</p></div>
+<p id="m6_gauge_note" class="text-[10px] text-cyan-300/80 leading-snug"></p></div>
+</div>
+
+<div class="lg:col-span-8 flex flex-col gap-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 space-y-1.5"><div class="flex justify-between items-center border-b border-slate-700 pb-1.5 mb-1"><h4 class="text-purple-400 font-bold uppercase mb-2 text-[11px]">Tensiones en la pared</h4><span id="m6_re" class="text-[10px] px-2 py-0.5 rounded">r/e = ?</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span id="m6_lbl1" class="text-slate-400">σcirc:</span><span id="m6_s1" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span id="m6_lbl2" class="text-slate-400">σaxial:</span><span id="m6_s2" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">σradial:</span><span id="m6_s3" class="text-cyan-300 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">p · e · r:</span><span id="m6_per" class="text-slate-300">—</span></div></div>
+
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 space-y-1.5"><h4 class="text-amber-400 font-bold uppercase mb-2 text-[11px] border-b border-slate-700 pb-1.5">Cortantes</h4>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">τmáx en el plano:</span><span id="m6_tpl" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">τmáx absoluta:</span><span id="m6_tabs" class="text-amber-300 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">planos de τmáx:</span><span id="m6_tplane" class="text-slate-300 text-[10px]">—</span></div></div>
+
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 space-y-1.5"><h4 class="text-emerald-400 font-bold uppercase mb-2 text-[11px] border-b border-slate-700 pb-1.5">Seguridad</h4>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">σeq (criterio):</span><span id="m6_seq" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">σadm:</span><span id="m6_sadm_out" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">aprovechamiento:</span><span id="m6_util" class="text-white font-bold">0 %</span></div>
+<div class="flex justify-between"><span class="text-slate-400">Estado:</span><span id="m6_status" class="font-bold">—</span></div></div></div>
+
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Círculos de Mohr del punto</h3><span class="text-[10px] text-slate-400 font-mono">σ — τ [MPa]</span></div>
+<div id="plot-mod6-mohr" class="w-full h-96 bg-slate-950 rounded-lg"></div>
+<p class="text-[10px] text-slate-500 leading-snug mt-2">El círculo del plano de la pared es el que une σ₁ y σ₂. En la esfera degenera en un <strong>punto</strong>, pero σ₃ = 0 mantiene los otros dos: sigue habiendo cortante en planos que atraviesan el espesor.</p></div>
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm text-slate-200">Elemento de pared</h3><span id="m6_esq_tag" class="text-[10px] text-slate-400 font-mono"></span></div>
+<div id="plot-mod6-esq" class="w-full h-96 bg-slate-950 rounded-lg"></div></div></div>
+
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<h3 class="font-semibold text-sm text-indigo-300 uppercase tracking-wider border-b border-slate-700 pb-2 mb-3"><i class="fa-solid fa-ruler-combined mr-1"></i>Los tres criterios, en paralelo</h3>
+<div class="overflow-x-auto"><table class="w-full text-xs font-mono"><thead><tr class="text-slate-400 border-b border-slate-700">
+<th class="text-left py-1.5 font-semibold">Criterio</th><th class="text-right py-1.5 font-semibold">σeq [MPa]</th><th class="text-right py-1.5 font-semibold">e mínimo [mm]</th><th class="text-right py-1.5 font-semibold">e/e(von Mises)</th><th class="text-right py-1.5 font-semibold">Estado</th></tr></thead>
+<tbody id="m6_tabla_crit"></tbody></table></div>
+<p class="text-[10px] text-slate-500 leading-snug mt-2">El espesor mínimo se resuelve numéricamente, así que también vale con σ₃ = −p (donde las tensiones ya no son proporcionales a 1/e).</p></div>
+</div></div>
+
+<div id="m6_card_weld" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-3 flex-wrap gap-2 border-b border-slate-700 pb-2">
+<h3 class="font-semibold text-sm text-amber-300 uppercase tracking-wider"><i class="fa-solid fa-fire-flame-simple mr-1"></i>Cordón de soldadura</h3>
+<span class="text-[10px] px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">solo depósitos cilíndricos</span></div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<div class="space-y-3">
+<div class="font-mono text-xs"><label class="block text-amber-400 mb-1">α [º] — desde el eje axial</label>
+<input type="range" id="m6_alpha_sl" min="0" max="90" step="1" value="45" oninput="document.getElementById('m6_alpha').value=this.value;updateModule6()" class="w-full accent-amber-500">
+<input type="number" id="m6_alpha" value="45" min="0" max="90" step="5" oninput="document.getElementById('m6_alpha_sl').value=this.value;updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white mt-1"></div>
+<div id="m6_weld_tipo" class="text-xs rounded-lg px-3 py-2 border"></div>
+<div class="space-y-1.5 font-mono text-xs bg-slate-900/70 border border-slate-700/60 rounded-lg p-3">
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">σn del cordón:</span><span id="m6_weld_sn" class="text-white font-bold">0</span></div>
+<div class="flex justify-between border-b border-slate-700/60 pb-1"><span class="text-slate-400">τ del cordón:</span><span id="m6_weld_tau" class="text-amber-300 font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">τ máx (α=45º):</span><span id="m6_weld_taumax" class="text-slate-300">0</span></div></div></div>
+<div class="lg:col-span-2"><div id="plot-mod6-weld" class="w-full h-72 bg-slate-950 rounded-lg"></div></div></div></div>
+
+<div id="m6_card_noweld" class="bg-slate-800/70 border border-slate-700 rounded-xl p-4 hidden">
+<h3 class="font-semibold text-sm text-amber-300 uppercase tracking-wider border-b border-slate-700 pb-2 mb-2"><i class="fa-solid fa-fire-flame-simple mr-1"></i>Cordón de soldadura — no aplica a la esfera</h3>
+<p class="text-xs text-slate-300 leading-relaxed">En el depósito esférico σ₁ = σ₂ = p·r/2e, así que el círculo de Mohr del plano de la pared es un punto: <strong>cualquier</strong> dirección del plano tangente ve la misma tensión normal y τ = 0. No hay orientación de cordón mejor ni peor, y por eso el ángulo α no tiene sentido aquí. En el cilindro sí, porque σcirc = 2·σaxial.</p></div>
+
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<div class="flex justify-between items-center mb-3 border-b border-slate-700 pb-2 flex-wrap gap-2">
+<h3 class="font-semibold text-sm text-cyan-300 uppercase tracking-wider"><i class="fa-solid fa-screwdriver-wrench mr-1"></i>Unión atornillada</h3>
+<span id="m6_bolt_tag" class="text-[10px] text-slate-400"></span></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3 font-mono text-xs">
+<div><label class="text-slate-400 block mb-1">Ø tornillo [mm]</label><input type="number" id="m6_bd" value="25" step="1" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div><label class="text-slate-400 block mb-1">σadm tornillo [MPa]</label><input type="number" id="m6_bsadm" value="250" step="10" oninput="updateModule6()" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white"></div>
+<div class="bg-slate-900/70 border border-slate-700/60 rounded-lg p-2.5 space-y-1">
+<div class="flex justify-between"><span class="text-slate-400">F total:</span><span id="m6_bF" class="text-white font-bold">0</span></div>
+<div class="flex justify-between"><span class="text-slate-400">F por tornillo:</span><span id="m6_bFb" class="text-slate-300">0</span></div></div>
+<div class="bg-cyan-950/30 border border-cyan-800/50 rounded-lg p-2.5 flex flex-col justify-center items-center">
+<span class="text-cyan-300 text-[10px] uppercase tracking-wider">Nº mínimo</span><span id="m6_bn" class="text-cyan-200 text-xl font-bold">0</span></div></div>
+<p id="m6_bolt_note" class="text-[10px] text-slate-500 leading-snug mt-2"></p></div>
+
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<h3 class="font-semibold text-sm text-emerald-300 uppercase tracking-wider border-b border-slate-700 pb-2 mb-3"><i class="fa-solid fa-code-compare mr-1"></i>Cilindro ↔ esfera</h3>
+<div class="overflow-x-auto"><table class="w-full text-xs font-mono"><thead><tr class="text-slate-400 border-b border-slate-700">
+<th class="text-left py-1.5 font-semibold">Comparación</th><th class="text-right py-1.5 font-semibold">Cilindro</th><th class="text-right py-1.5 font-semibold">Esfera</th><th class="text-right py-1.5 font-semibold">Esf./Cil.</th></tr></thead>
+<tbody id="m6_tabla_comp"></tbody></table></div>
+<p id="m6_comp_note" class="text-[10px] text-slate-400 leading-snug mt-2"></p></div>
+<div class="bg-slate-800/70 border border-slate-700 rounded-xl p-4">
+<h3 class="font-semibold text-sm text-cyan-300 uppercase tracking-wider border-b border-slate-700 pb-2 mb-3"><i class="fa-solid fa-lightbulb mr-1"></i>Lectura del resultado</h3>
+<div id="m6_lectura" class="space-y-2.5 text-xs text-slate-300 leading-relaxed"></div></div></div>
+</section>
+
 </main></div>
 
 <div id="conv-modal" class="hidden fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4" onclick="if(event.target===this)closeConventions()">
@@ -257,6 +491,17 @@
 <p>• El vector n̂ se rota por <strong>Rz(+θ)</strong>: n' = (n<sub>x</sub>·cosθ − n<sub>y</sub>·sinθ, n<sub>x</sub>·sinθ + n<sub>y</sub>·cosθ, n<sub>z</sub>). Para θ > 0, n̂ gira de X hacia Y (antihorario mirando desde +Z).</p>
 <p>• Girar n̂ por +θ es equivalente a girar el plano π<sub>n̂</sub> por −θ.</p>
 <p>• En el Mohr 2D, θ se representa con un arco de <strong>2θ</strong> (desde el punto x hasta su girado x'), siguiendo la teoría clásica de Mohr.</p></div>
+<div><h3 class="text-cyan-300 font-bold uppercase tracking-wider text-xs mb-2">Mohr comparado σ / ε (Módulo 4)</h3>
+<p>• Los dos paneles usan el mismo tensor: para deformaciones se representa (ε, γ/2), porque las componentes del tensor de deformación son ε<sub>ij</sub> = γ<sub>ij</sub>/2. Por eso ambos círculos tienen la misma geometría y son directamente comparables.</p>
+<p>• <strong>Plano (XY)</strong>: círculo construido solo con σ<sub>x</sub>, σ<sub>y</sub>, τ<sub>xy</sub> (resp. ε<sub>x</sub>, ε<sub>y</sub>, γ<sub>xy</sub>), ignorando la tercera dirección. <strong>Triaxial</strong>: los tres círculos principales. <strong>Ambos</strong>: se superponen, con el círculo plano a trazos.</p>
+<p>• Salvo isotropía perfecta, los ejes principales de σ y de ε coinciden en material elástico lineal isótropo: los dos diagramas tienen los puntos x, y, z en el mismo orden, pero con escalas y centros distintos (el de ε está desplazado por el efecto de Poisson).</p></div>
+<div><h3 class="text-cyan-300 font-bold uppercase tracking-wider text-xs mb-2">Signo de τ en el Mohr 3D (Módulo 3)</h3>
+<p>• Se usa el mismo convenio que el círculo de Mohr 2D: con t̂ = ẑ × n̂ (tangente obtenida al girar n̂ +90º alrededor de z), se representa <strong>τ = −(τ⃗ · t̂)</strong> con módulo |τ⃗|.</p>
+<p>• Consecuencia: si τ<sub>xy</sub> &gt; 0 en el tensor, el punto de la cara <strong>x</strong> cae <strong>por debajo</strong> del eje σ y el de la cara <strong>y</strong> por encima, exactamente igual que en el círculo 2D. El vector T(n̂) sigue la misma regla, de modo que para n̂ = x̂ coincide con el punto x.</p>
+<p>• Casos degenerados (τ⃗ perpendicular a t̂, o n̂ paralelo a ẑ): se toma el módulo con signo positivo.</p></div>
+<div><h3 class="text-cyan-300 font-bold uppercase tracking-wider text-xs mb-2">Persistencia de la vista</h3>
+<p>• Al modificar cualquier parámetro se conserva la cámara 3D (giro, zoom y desplazamiento) y el zoom de los gráficos 2D. Los dibujos ya no vuelven a su orientación inicial en cada cálculo.</p>
+<p>• Botón <strong>Vista</strong> en cada escena 3D: restablece la orientación inicial. En los gráficos 2D, doble clic devuelve el autoescalado.</p></div>
 <div><h3 class="text-cyan-300 font-bold uppercase tracking-wider text-xs mb-2">Normalización del vector n̂</h3>
 <p>• n̂ se normaliza automáticamente antes de cualquier cálculo. Introducir (2, 0, 0) equivale a (1, 0, 0).</p>
 <p>• Si n̂ ≈ (0, 0, 0), el sistema lo sustituye por (0.577, 0.577, 0.577) = (1,1,1)/√3 y muestra un aviso en el panel.</p>
@@ -277,7 +522,973 @@
 </div>
 </div>
 
-<!-- Enlace a la versión procesada del código -->
-<script src="app.min.js"></script>
+<script>
+function num(id){const el=document.getElementById(id);if(!el)return 0;const v=parseFloat(el.value);return isNaN(v)?0:v;}
+function chk(id){const el=document.getElementById(id);return el?el.checked:true;}
+/* ===== Persistencia de vista: camara 3D y zoom 2D =====
+   Plotly.react reinicia la camara si el layout no la lleva. Guardamos la vista
+   viva de cada grafico y la reinyectamos en cada refresco. */
+const VIEW_ST={};
+const DEF_CAM={'plot-mod1':{x:1.35,y:1.35,z:1.1},'plot-mod2':{x:1.25,y:1.25,z:1.25},'plot-mod3-3d':{x:1.6,y:1.3,z:1.2},'plot-mod3-cube':{x:1.4,y:1.4,z:1.2},'plot-mod4-3d':{x:1.25,y:1.25,z:1.25}};
+function vSt(id){return VIEW_ST[id]||(VIEW_ST[id]={cam:null,zoomed:false,xr:null,yr:null});}
+function cloneCam(c){if(!c)return null;const o={};if(c.eye)o.eye={x:c.eye.x,y:c.eye.y,z:c.eye.z};if(c.center)o.center={x:c.center.x,y:c.center.y,z:c.center.z};if(c.up)o.up={x:c.up.x,y:c.up.y,z:c.up.z};if(c.projection&&c.projection.type)o.projection={type:c.projection.type};return o;}
+function bindViewEvents(id){const gd=document.getElementById(id);if(!gd||gd._viewBound||typeof gd.on!=='function')return;gd._viewBound=true;
+gd.on('plotly_relayout',ed=>{if(!ed)return;const st=vSt(id),fl=gd._fullLayout||{};
+if(('scene.camera' in ed)||('scene.camera.eye' in ed)){if(fl.scene&&fl.scene.camera)st.cam=cloneCam(fl.scene.camera);}
+if(ed['xaxis.autorange']===true||ed['yaxis.autorange']===true){st.zoomed=false;st.xr=null;st.yr=null;}
+else if(('xaxis.range[0]' in ed)||('yaxis.range[0]' in ed)||('xaxis.range' in ed)||('yaxis.range' in ed)){st.zoomed=true;if(fl.xaxis&&fl.xaxis.range)st.xr=fl.xaxis.range.slice();if(fl.yaxis&&fl.yaxis.range)st.yr=fl.yaxis.range.slice();}});
+gd.on('plotly_doubleclick',()=>{const st=vSt(id);st.zoomed=false;st.xr=null;st.yr=null;});}
+function plotKeepView(id,traces,layout,config){const gd=document.getElementById(id),st=vSt(id);
+if(gd&&gd._fullLayout){
+if(layout.scene){const live=cloneCam(gd._fullLayout.scene&&gd._fullLayout.scene.camera)||st.cam;if(live)layout.scene.camera=Object.assign({},layout.scene.camera||{},live);}
+if(st.zoomed){if(st.xr&&layout.xaxis)layout.xaxis=Object.assign({},layout.xaxis,{range:st.xr.slice(),autorange:false});if(st.yr&&layout.yaxis)layout.yaxis=Object.assign({},layout.yaxis,{range:st.yr.slice(),autorange:false});}}
+const pr=Plotly.react(id,traces,layout,config);
+if(pr&&typeof pr.then==='function')return pr.then(r=>{bindViewEvents(id);return r;});
+bindViewEvents(id);return pr;}
+function resetView(id){const st=vSt(id),d=DEF_CAM[id];st.zoomed=false;st.xr=null;st.yr=null;
+const refresh=()=>{try{if(id==='plot-mod1')updateModule1();else if(id==='plot-mod2')updateModule2();else if(id==='plot-mod3-3d'||id==='plot-mod3-cube')updateModule3();else if(id==='plot-mod4-3d')updateModule4();}catch(e){console.warn('resetView:',e);}};
+if(!d){refresh();return;}
+st.cam={eye:{x:d.x,y:d.y,z:d.z},center:{x:0,y:0,z:0},up:{x:0,y:0,z:1}};
+if(id==='plot-mod1')mod1Eye={x:d.x,y:d.y,z:d.z};
+if(id==='plot-mod3-3d')mod3EyeMohr={x:d.x,y:d.y,z:d.z};
+if(id==='plot-mod3-cube')mod3EyeCube={x:d.x,y:d.y,z:d.z};
+const gd=document.getElementById(id);
+if(gd&&gd._fullLayout){const p=Plotly.relayout(id,{'scene.camera':st.cam});if(p&&typeof p.then==='function'){p.then(refresh);return;}}
+refresh();}
+
+/* Signo de tau en el plano de Mohr, convenio del circulo 2D:
+   t = z x n (tangente al girar n +90 deg alrededor de z); se representa tau = -(tau_vec . t).
+   Asi la cara x con txy>0 cae POR DEBAJO del eje sigma, igual que en el circulo 2D. */
+function mohrTauSign(nx,ny,nz,tx,ty,tz){const mt=Math.sqrt(nx*nx+ny*ny);
+if(mt>1e-9){const pr=(tx*(-ny)+ty*nx)/mt;if(Math.abs(pr)>1e-9)return pr>0?-1:1;}
+return 1;}
+
+/* ===== Circulos de Mohr reutilizables (tensiones o deformaciones) =====
+   Para deformaciones se pasa el TENSOR: xy = gxy/2, yz = gyz/2, zx = gzx/2,
+   de modo que la matematica es identica y el eje de ordenadas es gamma/2. */
+function principal3(a,b,c,ab,bc,ca){const I1=a+b+c,q=I1/3,pp=ab*ab+bc*bc+ca*ca,
+p2=Math.pow(a-q,2)+Math.pow(b-q,2)+Math.pow(c-q,2)+2*pp,p=Math.sqrt(p2/6);
+let s1=q,s2=q,s3=q;
+if(p>1e-14){const B11=(a-q)/p,B22=(b-q)/p,B33=(c-q)/p,B12=ab/p,B23=bc/p,B13=ca/p;
+const dB=B11*(B22*B33-B23*B23)-B12*(B12*B33-B23*B13)+B13*(B12*B23-B22*B13);
+const r=Math.max(-1,Math.min(1,dB/2)),phi=Math.acos(r)/3;
+s1=q+2*p*Math.cos(phi);s3=q+2*p*Math.cos(phi+2*Math.PI/3);s2=3*q-s1-s3;}
+return [s1,s2,s3].sort((x,y)=>y-x);}
+
+function renderMohrPanel(elId,T,o){
+  const traces=[],d=(o.dec===undefined?1:o.dec);
+  const f=v=>{const t=+v.toFixed(d);return (Object.is(t,-0)?0:t).toFixed(d);};
+  const mk=(c,r)=>{const x=[],y=[];for(let a=0;a<=360;a+=3){const t=a*Math.PI/180;x.push(c+r*Math.cos(t));y.push(r*Math.sin(t));}return{x:x,y:y};};
+  const plane=(o.mode==='plane'||o.mode==='both'),triax=(o.mode==='triax'||o.mode==='both');
+  const p=principal3(T.xx,T.yy,T.zz,T.xy,T.yz,T.zx);
+  if(triax){
+    const CS=[[(p[0]+p[2])/2,(p[0]-p[2])/2,'#a855f7',2.8,'C₁₃'],
+              [(p[1]+p[2])/2,(p[1]-p[2])/2,'#f43f5e',1.8,'C₂₃'],
+              [(p[0]+p[1])/2,(p[0]-p[1])/2,'#38bdf8',1.8,'C₁₂']];
+    CS.forEach(k=>{const c=mk(k[0],k[1]);traces.push({x:c.x,y:c.y,mode:'lines',name:k[4],line:{color:k[2],width:k[3]},hoverinfo:'skip'});});
+  }
+  let cc=0,rr=0;
+  if(plane){
+    cc=(T.xx+T.yy)/2;rr=Math.sqrt(Math.pow((T.xx-T.yy)/2,2)+T.xy*T.xy);
+    const c=mk(cc,rr);
+    traces.push({x:c.x,y:c.y,mode:'lines',name:'Plano XY',line:{color:'#818cf8',width:2.4,dash:(o.mode==='both'?'dash':'solid')},hoverinfo:'skip'});
+  }
+  if(o.showPrinc){
+    if(triax)traces.push({x:[p[2],p[1],p[0]],y:[0,0,0],mode:'markers+text',
+      text:[o.tag+'₃='+f(p[2]),o.tag+'₂='+f(p[1]),o.tag+'₁='+f(p[0])],
+      textposition:['bottom center','bottom center','top center'],
+      textfont:{color:'#f472b6',size:10,family:'monospace'},
+      marker:{color:'#f472b6',size:11,symbol:'diamond',line:{color:'#fff',width:1.5}},name:'Principales'});
+    if(plane)traces.push({x:[cc-rr,cc+rr],y:[0,0],mode:'markers'+(o.mode==='plane'?'+text':''),
+      text:[o.tag+'₂ᴾ='+f(cc-rr),o.tag+'₁ᴾ='+f(cc+rr)],textposition:['bottom center','top center'],
+      textfont:{color:'#a5b4fc',size:10,family:'monospace'},
+      marker:{color:'#818cf8',size:10,symbol:'diamond-open',line:{width:2}},name:'Ppales. XY'});
+  }
+  if(o.showXYZ){
+    if(triax){
+      const mX=Math.sqrt(T.xy*T.xy+T.zx*T.zx),mY=Math.sqrt(T.xy*T.xy+T.yz*T.yz),mZ=Math.sqrt(T.zx*T.zx+T.yz*T.yz);
+      const yX=mohrTauSign(1,0,0,0,T.xy,T.zx)*mX,yY=mohrTauSign(0,1,0,T.xy,0,T.yz)*mY,yZ=mohrTauSign(0,0,1,T.zx,T.yz,0)*mZ;
+      const tp=v=>v>=0?'top center':'bottom center';
+      const FL=o.faceLabels||['x','y','z'];
+      traces.push({x:[T.xx,T.yy,T.zz],y:[yX,yY,yZ],mode:'markers+text',text:FL,
+        textposition:[tp(yX),tp(yY),tp(yZ)],textfont:{color:'#ef4444',size:12,family:'monospace'},
+        marker:{color:['#ef4444','#22c55e','#3b82f6'],size:9,line:{color:'#fff',width:1}},
+        name:o.faceLabels?'Direcciones '+FL.join(', '):'Caras x,y,z'});
+    }else{
+      traces.push({x:[T.xx,T.yy],y:[-T.xy,T.xy],mode:'lines+markers+text',text:['x','y'],
+        textposition:['bottom right','top right'],textfont:{color:'#f59e0b',size:12,family:'monospace'},
+        marker:{color:'#f59e0b',size:9,line:{color:'#fff',width:1}},
+        line:{color:'#f59e0b',width:1.5,dash:'dot'},name:'Caras x,y'});
+    }
+  }
+  if(o.showN&&o.n){
+    const n=o.n,Tx=T.xx*n.x+T.xy*n.y+T.zx*n.z,Ty=T.xy*n.x+T.yy*n.y+T.yz*n.z,Tz=T.zx*n.x+T.yz*n.y+T.zz*n.z;
+    const sn=Tx*n.x+Ty*n.y+Tz*n.z,vx=Tx-sn*n.x,vy=Ty-sn*n.y,vz=Tz-sn*n.z;
+    const tn=Math.sqrt(vx*vx+vy*vy+vz*vz)*mohrTauSign(n.x,n.y,n.z,vx,vy,vz);
+    const NL=o.nLabel||'n̂';
+    traces.push({x:[sn],y:[tn],mode:'markers+text',text:[NL],
+      textposition:(tn>=0?'top center':'bottom center'),
+      textfont:{color:'#34d399',size:12,family:'monospace'},
+      marker:{color:'#34d399',size:15,symbol:'star-open',line:{width:2.5,color:'#34d399'}},
+      name:NL,hovertemplate:NL+': '+o.tag+'<sub>n</sub> = '+f(sn)+' '+(o.unit||'')+
+      '<br>'+(o.tag==='σ'?'τ':'γ/2')+' = '+f(tn)+' '+(o.unit||'')+'<extra></extra>'});
+  }
+  const layout={margin:{l:52,r:14,b:78,t:10},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',hovermode:'closest',
+    xaxis:{title:{text:o.xlab,font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',zerolinecolor:'#475569'},
+    yaxis:{title:{text:o.ylab,font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',zerolinecolor:'#475569',scaleanchor:'x',scaleratio:1},
+    showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',
+      x:0.5,xanchor:'center',y:-0.2,yanchor:'top',bgcolor:'rgba(0,0,0,0)'}};
+  plotKeepView(elId,traces,layout,{responsive:true,displayModeBar:false});
+}
+
+function updateModule4Layout(){
+  const sS=document.getElementById('m4_show_mohr_s'),sE=document.getElementById('m4_show_mohr_e'),
+        cS=document.getElementById('m4-mohr-s-card'),cE=document.getElementById('m4-mohr-e-card'),
+        row=document.getElementById('m4-mohr-row'),opt=document.getElementById('m4-mohr-opts');
+  if(!sS||!sE||!cS||!cE||!row)return;
+  const a=sS.checked,b=sE.checked;
+  cS.classList.toggle('hidden',!a);cE.classList.toggle('hidden',!b);
+  row.classList.toggle('hidden',!a&&!b);
+  if(a&&b){row.classList.add('lg:grid-cols-2');row.classList.remove('lg:grid-cols-1');}
+  else{row.classList.remove('lg:grid-cols-2');row.classList.add('lg:grid-cols-1');}
+  if(opt){const det=opt.querySelector('[data-mohr-detail]');if(det)det.classList.toggle('opacity-40',!a&&!b);}
+  setTimeout(()=>{try{['plot-mod4-mohr-s','plot-mod4-mohr-e'].forEach(id=>{const g=document.getElementById(id);
+    if(g&&g.data&&g.offsetWidth>0)Plotly.Plots.resize(g);});}catch(e){console.warn(e);}},60);
+}
+
+/* Autoajuste: cuando cambia el tamano del contenedor (ventana, paneles que se
+   muestran u ocultan, sidebar...) se redibuja el grafico a la medida disponible. */
+function autoFitPlots(){
+  if(typeof ResizeObserver==='undefined')return;
+  let tmr=null;const pend=new Set();
+  const ro=new ResizeObserver(en=>{en.forEach(e=>{if(e.target.id)pend.add(e.target.id);});
+    clearTimeout(tmr);tmr=setTimeout(()=>{pend.forEach(id=>{try{const g=document.getElementById(id);
+      if(g&&g.data&&g.offsetWidth>0)Plotly.Plots.resize(g);}catch(err){}});pend.clear();},120);});
+  document.querySelectorAll('div[id^="plot-mod"]').forEach(dv=>ro.observe(dv));
+}
+
+function openConventions(){document.getElementById('conv-modal').classList.remove('hidden');}
+function closeConventions(){document.getElementById('conv-modal').classList.add('hidden');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeConventions();});
+function switchTab(t){document.querySelectorAll('.tab-content').forEach(e=>e.classList.add('hidden'));document.querySelectorAll('.tab-nav-btn').forEach(b=>{b.classList.remove('bg-indigo-600','text-white','shadow-md');b.classList.add('text-slate-300');});const a=document.getElementById(t);if(a)a.classList.remove('hidden');const b=document.getElementById('nav-'+t);if(b){b.classList.add('bg-indigo-600','text-white','shadow-md');b.classList.remove('text-slate-300');}setTimeout(()=>{try{if(t==='mod1')updateModule1();if(t==='mod2')updateModule2();if(t==='mod3')updateModule3();if(t==='mod4')updateModule4();if(t==='mod5')updateModule5();if(t==='mod6')updateModule6();if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise();}catch(e){console.error('switchTab error:',t,e);}},60);}
+
+let mod1Eye={x:1.35,y:1.35,z:1.1},isMod1Updating=false,mod1RelayoutBound=false;
+function faceVisibilityKey(e){return [e.x>-0.1,e.x<0.1,e.y>-0.1,e.y<0.1,e.z>-0.1,e.z<0.1].join('|');}
+function faceScale(){const c=Array.from(arguments);return 0.55/Math.max.apply(null,c.map(Math.abs).concat([5]));}
+function updateModule1(){if(isMod1Updating)return;isMod1Updating=true;try{
+const sx=num('m1_sx'),sy=num('m1_sy'),sz=num('m1_sz'),txy=num('m1_txy'),tyz=num('m1_tyz'),txz=num('m1_txz');
+const m_tyx=document.getElementById('m1_tyx_mirror'),m_tzx=document.getElementById('m1_tzx_mirror'),m_tzy=document.getElementById('m1_tzy_mirror');
+if(m_tyx)m_tyx.value=txy;if(m_tzx)m_tzx.value=txz;if(m_tzy)m_tzy.value=tyz;
+const eye=mod1Eye,sX=faceScale(sx,txy,txz),sY=faceScale(sy,txy,tyz),sZ=faceScale(sz,txz,tyz);
+const cubeMesh={type:'mesh3d',x:[-0.5,0.5,0.5,-0.5,-0.5,0.5,0.5,-0.5],y:[-0.5,-0.5,0.5,0.5,-0.5,-0.5,0.5,0.5],z:[-0.5,-0.5,-0.5,-0.5,0.5,0.5,0.5,0.5],i:[7,0,0,0,4,4,2,6,4,0,3,7],j:[3,4,1,2,5,6,5,2,0,1,6,5],k:[0,7,2,3,6,7,1,1,5,5,2,6],color:'#1e293b',opacity:0.92,flatshading:true,lighting:{ambient:0.8,diffuse:0.6},hoverinfo:'none',showlegend:false};
+const wX=[-0.5,0.5,0.5,-0.5,-0.5,null,-0.5,0.5,0.5,-0.5,-0.5,null,-0.5,-0.5,null,0.5,0.5,null,0.5,0.5,null,-0.5,-0.5];
+const wY=[-0.5,-0.5,0.5,0.5,-0.5,null,-0.5,-0.5,0.5,0.5,-0.5,null,-0.5,-0.5,null,-0.5,-0.5,null,0.5,0.5,null,0.5,0.5];
+const wZ=[-0.5,-0.5,-0.5,-0.5,-0.5,null,0.5,0.5,0.5,0.5,0.5,null,-0.5,0.5,null,-0.5,0.5,null,-0.5,0.5,null,-0.5,0.5];
+const cubeEdges={type:'scatter3d',mode:'lines',x:wX,y:wY,z:wZ,line:{color:'#64748b',width:4},hoverinfo:'none',showlegend:false};
+const traces=[cubeMesh,cubeEdges],annotations=[];
+function addVector(fx,fy,fz,dx,dy,dz,color,label,scale){if(dx===0&&dy===0&&dz===0)return;const mag=Math.sqrt(dx*dx+dy*dy+dz*dz),ux=dx/mag,uy=dy/mag,uz=dz/mag;const nfx=fx*2,nfy=fy*2,nfz=fz*2,dot=dx*nfx+dy*nfy+dz*nfz;const vL=Math.max(mag*scale,0.22),cL=Math.min(0.14,vL*0.45);let bX,bY,bZ,tX,tY,tZ,inward=dot<-1e-5;if(inward){tX=fx;tY=fy;tZ=fz;bX=fx-ux*vL;bY=fy-uy*vL;bZ=fz-uz*vL;}else{bX=fx;bY=fy;bZ=fz;tX=fx+ux*vL;tY=fy+uy*vL;tZ=fz+uz*vL;}const eX=tX-ux*cL,eY=tY-uy*cL,eZ=tZ-uz*cL;traces.push({type:'scatter3d',mode:'lines',x:[bX,eX],y:[bY,eY],z:[bZ,eZ],line:{color:color,width:8},showlegend:false,hoverinfo:'none'});traces.push({type:'cone',x:[tX],y:[tY],z:[tZ],u:[ux],v:[uy],w:[uz],sizemode:'absolute',sizeref:cL*1.2,showscale:false,colorscale:[[0,color],[1,color]],hoverinfo:'none',showlegend:false,anchor:'tip'});const lx=inward?bX-ux*0.16:tX+ux*0.16,ly=inward?bY-uy*0.16:tY+uy*0.16,lz=inward?bZ-uz*0.16:tZ+uz*0.16;annotations.push({x:lx,y:ly,z:lz,text:'<b style="color:'+color+'">'+label+'</b>',font:{size:13,family:'monospace'},showarrow:false});}
+function addVectorAt(fx,fy,fz,ox,oy,oz,dx,dy,dz,color,label,scale){addVector(fx+ox,fy+oy,fz+oz,dx,dy,dz,color,label,scale);}
+function addAxisArrow(oX,oY,oZ,dX,dY,dZ,color,labelText){const mag=Math.sqrt(dX*dX+dY*dY+dZ*dZ),ux=dX/mag,uy=dY/mag,uz=dZ/mag,cL=0.12;const eX=oX+dX,eY=oY+dY,eZ=oZ+dZ;const sX=eX-ux*cL,sY=eY-uy*cL,sZ=eZ-uz*cL;traces.push({type:'scatter3d',mode:'lines',x:[oX,sX],y:[oY,sY],z:[oZ,sZ],line:{color:color,width:7},showlegend:false,hoverinfo:'none'});traces.push({type:'cone',x:[eX],y:[eY],z:[eZ],u:[ux],v:[uy],w:[uz],sizemode:'absolute',sizeref:cL*1.2,showscale:false,colorscale:[[0,color],[1,color]],hoverinfo:'none',showlegend:false,anchor:'tip'});annotations.push({x:eX+ux*0.15,y:eY+uy*0.15,z:eZ+uz*0.15,text:'<b style="color:'+color+'">'+labelText+'</b>',font:{size:12,family:'sans-serif'},showarrow:false});}
+addAxisArrow(-0.65,-0.65,-0.65,0.4,0,0,'#ef4444','Eje X');addAxisArrow(-0.65,-0.65,-0.65,0,0.4,0,'#22c55e','Eje Y');addAxisArrow(-0.65,-0.65,-0.65,0,0,0.4,'#3b82f6','Eje Z');
+const OFF=0.22;
+if(eye.x>-0.1){addVectorAt(0.5,0,0,0,0,0,sx,0,0,'#ef4444','σx='+sx,sX);addVectorAt(0.5,0,0,0,0,OFF,0,txy,0,'#ef4444','τxy='+txy,sX);addVectorAt(0.5,0,0,0,OFF,0,0,0,txz,'#ef4444','τxz='+txz,sX);}
+if(eye.x<0.1){addVectorAt(-0.5,0,0,0,0,0,-sx,0,0,'#ef4444','σx='+sx,sX);addVectorAt(-0.5,0,0,0,0,-OFF,0,-txy,0,'#ef4444','τxy='+txy,sX);addVectorAt(-0.5,0,0,0,-OFF,0,0,0,-txz,'#ef4444','τxz='+txz,sX);}
+if(eye.y>-0.1){addVectorAt(0,0.5,0,0,0,0,0,sy,0,'#22c55e','σy='+sy,sY);addVectorAt(0,0.5,0,0,0,-OFF,txy,0,0,'#22c55e','τyx='+txy,sY);addVectorAt(0,0.5,0,OFF,0,0,0,0,tyz,'#22c55e','τyz='+tyz,sY);}
+if(eye.y<0.1){addVectorAt(0,-0.5,0,0,0,0,0,-sy,0,'#22c55e','σy='+sy,sY);addVectorAt(0,-0.5,0,0,0,OFF,-txy,0,0,'#22c55e','τyx='+txy,sY);addVectorAt(0,-0.5,0,-OFF,0,0,0,0,-tyz,'#22c55e','τyz='+tyz,sY);}
+if(eye.z>-0.1){addVectorAt(0,0,0.5,0,0,0,0,0,sz,'#3b82f6','σz='+sz,sZ);addVectorAt(0,0,0.5,0,OFF,0,txz,0,0,'#3b82f6','τzx='+txz,sZ);addVectorAt(0,0,0.5,-OFF,0,0,0,tyz,0,'#3b82f6','τzy='+tyz,sZ);}
+if(eye.z<0.1){addVectorAt(0,0,-0.5,0,0,0,0,0,-sz,'#3b82f6','σz='+sz,sZ);addVectorAt(0,0,-0.5,0,-OFF,0,-txz,0,0,'#3b82f6','τzx='+txz,sZ);addVectorAt(0,0,-0.5,OFF,0,0,0,-tyz,0,'#3b82f6','τzy='+tyz,sZ);}
+const layout={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'transparent',scene:{xaxis:{title:'X',range:[-1.6,1.6],color:'#ef4444',gridcolor:'#334155'},yaxis:{title:'Y',range:[-1.6,1.6],color:'#22c55e',gridcolor:'#334155'},zaxis:{title:'Z',range:[-1.6,1.6],color:'#3b82f6',gridcolor:'#334155'},aspectmode:'cube',camera:{eye:eye},annotations:annotations}};
+plotKeepView('plot-mod1',traces,layout,{responsive:true,displayModeBar:false}).then(()=>{if(!mod1RelayoutBound){mod1RelayoutBound=true;const pEl=document.getElementById('plot-mod1');pEl.on('plotly_relayout',ed=>{if(isMod1Updating)return;const eN=(ed&&ed['scene.camera']&&ed['scene.camera'].eye)||(ed&&ed['scene.camera.eye']);if(!eN)return;const oK=faceVisibilityKey(mod1Eye);mod1Eye=eN;if(faceVisibilityKey(eN)!==oK)updateModule1();});}}).catch(e=>console.error('Plotly m1:',e));
+}finally{isMod1Updating=false;}}
+
+function jacobiEigen3(A){let a=A.map(r=>r.slice()),V=[[1,0,0],[0,1,0],[0,0,1]];for(let it=0;it<100;it++){let p=0,q=1,mV=Math.abs(a[0][1]);if(Math.abs(a[0][2])>mV){p=0;q=2;mV=Math.abs(a[0][2]);}if(Math.abs(a[1][2])>mV){p=1;q=2;mV=Math.abs(a[1][2]);}if(mV<1e-12)break;const th=(a[q][q]-a[p][p])/(2*a[p][q]);const t=th>=0?1/(th+Math.sqrt(1+th*th)):-1/(-th+Math.sqrt(1+th*th));const c=1/Math.sqrt(1+t*t),s=t*c;const app=a[p][p],aqq=a[q][q],apq=a[p][q];const aip=[a[0][p],a[1][p],a[2][p]],aiq=[a[0][q],a[1][q],a[2][q]];for(let i=0;i<3;i++){if(i!==p&&i!==q){a[i][p]=a[p][i]=c*aip[i]-s*aiq[i];a[i][q]=a[q][i]=s*aip[i]+c*aiq[i];}}a[p][p]=c*c*app-2*c*s*apq+s*s*aqq;a[q][q]=s*s*app+2*c*s*apq+c*c*aqq;a[p][q]=a[q][p]=0;for(let i=0;i<3;i++){const vip=V[i][p],viq=V[i][q];V[i][p]=c*vip-s*viq;V[i][q]=s*vip+c*viq;}}return{values:[a[0][0],a[1][1],a[2][2]],vectors:V};}
+function updateModule2(){const sx=num('m2_sx'),sy=num('m2_sy'),sz=num('m2_sz'),txy=num('m2_txy'),tyz=num('m2_tyz'),tzx=num('m2_tzx');let nx=num('m2_nx')||0,ny=num('m2_ny')||0,nz=num('m2_nz')||0;
+const mN=Math.sqrt(nx*nx+ny*ny+nz*nz);
+const nNull=mN<1e-9;
+if(nNull){nx=1/Math.sqrt(3);ny=1/Math.sqrt(3);nz=1/Math.sqrt(3);}else{nx/=mN;ny/=mN;nz/=mN;}
+const nd=document.getElementById('m2_n_eff');if(nd)nd.textContent='('+nx.toFixed(3)+', '+ny.toFixed(3)+', '+nz.toFixed(3)+')';
+const nWarn=document.getElementById('m2_n_warn');if(nWarn)nWarn.classList.toggle('hidden',!nNull);
+const I1=sx+sy+sz,I2=sx*sy+sy*sz+sz*sx-(txy*txy+tyz*tyz+tzx*tzx),I3=sx*(sy*sz-tyz*tyz)-txy*(txy*sz-tyz*tzx)+tzx*(txy*tyz-sy*tzx),J2=(1/3)*(I1*I1-3*I2),sVM=Math.sqrt(3*Math.max(0,J2));
+document.getElementById('m2_i1').textContent=I1.toFixed(1)+' MPa';document.getElementById('m2_i2').textContent=I2.toFixed(1)+' MPa²';document.getElementById('m2_i3').textContent=I3.toFixed(1)+' MPa³';document.getElementById('m2_j2').textContent=J2.toFixed(1)+' MPa²';document.getElementById('m2_svm').textContent=sVM.toFixed(1)+' MPa';
+const q=I1/3,p1=txy*txy+tyz*tyz+tzx*tzx,p2=Math.pow(sx-q,2)+Math.pow(sy-q,2)+Math.pow(sz-q,2)+2*p1,p=Math.sqrt(p2/6);let s1=q,s2=q,s3=q;if(p!==0){const B11=(sx-q)/p,B22=(sy-q)/p,B33=(sz-q)/p,B12=txy/p,B23=tyz/p,B13=tzx/p;const dB=B11*(B22*B33-B23*B23)-B12*(B12*B33-B23*B13)+B13*(B12*B23-B22*B13);const r=Math.max(-1,Math.min(1,dB/2)),phi=Math.acos(r)/3;s1=q+2*p*Math.cos(phi);s3=q+2*p*Math.cos(phi+2*Math.PI/3);s2=3*q-s1-s3;}
+const sorted=[s1,s2,s3].sort((a,b)=>b-a);document.getElementById('m2_s1').textContent=sorted[0].toFixed(1)+' MPa';document.getElementById('m2_s2').textContent=sorted[1].toFixed(1)+' MPa';document.getElementById('m2_s3').textContent=sorted[2].toFixed(1)+' MPa';
+const Tx=sx*nx+txy*ny+tzx*nz,Ty=txy*nx+sy*ny+tyz*nz,Tz=tzx*nx+tyz*ny+sz*nz,sn=Tx*nx+Ty*ny+Tz*nz,snX=sn*nx,snY=sn*ny,snZ=sn*nz,tauX=Tx-snX,tauY=Ty-snY,tauZ=Tz-snZ,tn=Math.sqrt(tauX*tauX+tauY*tauY+tauZ*tauZ);
+document.getElementById('m2_tn_vec').textContent='('+Tx.toFixed(1)+','+Ty.toFixed(1)+','+Tz.toFixed(1)+')';document.getElementById('m2_sn_vec').textContent='('+snX.toFixed(1)+','+snY.toFixed(1)+','+snZ.toFixed(1)+')';document.getElementById('m2_sn').textContent=sn.toFixed(1)+' MPa';document.getElementById('m2_tau_vec').textContent='('+tauX.toFixed(1)+','+tauY.toFixed(1)+','+tauZ.toFixed(1)+')';document.getElementById('m2_tn').textContent=tn.toFixed(1)+' MPa';
+const T_m=[[sx,txy,tzx],[txy,sy,tyz],[tzx,tyz,sz]],eig=jacobiEigen3(T_m),order=[0,1,2].sort((a,b)=>Math.abs(eig.values[b])-Math.abs(eig.values[a]));const V=[[0,0,0],[0,0,0],[0,0,0]];for(let i=0;i<3;i++)for(let j=0;j<3;j++)V[i][j]=eig.vectors[i][order[j]];const a1=Math.abs(eig.values[order[0]])||1,a2=Math.abs(eig.values[order[1]])||1,a3=Math.abs(eig.values[order[2]])||1;
+const uS=24,vS=24,xA=[],yA=[],zA=[];for(let i=0;i<=uS;i++){const u=(i/uS)*2*Math.PI,xR=[],yR=[],zR=[];for(let j=0;j<=vS;j++){const v=(j/vS)*Math.PI,pu=a1*Math.cos(u)*Math.sin(v),pv=a2*Math.sin(u)*Math.sin(v),pw=a3*Math.cos(v);xR.push(V[0][0]*pu+V[0][1]*pv+V[0][2]*pw);yR.push(V[1][0]*pu+V[1][1]*pv+V[1][2]*pw);zR.push(V[2][0]*pu+V[2][1]*pv+V[2][2]*pw);}xA.push(xR);yA.push(yR);zA.push(zR);}
+let u1x,u1y,u1z;if(Math.abs(nz)<0.9){u1x=-ny;u1y=nx;u1z=0;}else{u1x=0;u1y=-nz;u1z=ny;}const mU1=Math.sqrt(u1x*u1x+u1y*u1y+u1z*u1z)||1;u1x/=mU1;u1y/=mU1;u1z/=mU1;const u2x=ny*u1z-nz*u1y,u2y=nz*u1x-nx*u1z,u2z=nx*u1y-ny*u1x;
+const pS=Math.max(a1,a2,a3,Math.sqrt(Tx*Tx+Ty*Ty+Tz*Tz))*1.1,pGX=[],pGY=[],pGZ=[];for(let i=-1;i<=1;i+=2){const rX=[],rY=[],rZ=[];for(let j=-1;j<=1;j+=2){rX.push((i*u1x+j*u2x)*pS);rY.push((i*u1y+j*u2y)*pS);rZ.push((i*u1z+j*u2z)*pS);}pGX.push(rX);pGY.push(rY);pGZ.push(rZ);}
+const traces=[{type:'surface',x:xA,y:yA,z:zA,colorscale:'Viridis',showscale:false,opacity:0.35,name:'Elipsoide Lamé'},{type:'surface',x:pGX,y:pGY,z:pGZ,colorscale:[[0,'#0284c7'],[1,'#0284c7']],showscale:false,opacity:0.3,name:'Plano π_n'},{type:'scatter3d',mode:'lines+markers',x:[0,nx*pS*0.8],y:[0,ny*pS*0.8],z:[0,nz*pS*0.8],line:{color:'#38bdf8',width:5},marker:{size:4,color:'#38bdf8'},name:'Normal n'},{type:'scatter3d',mode:'lines+markers',x:[0,Tx],y:[0,Ty],z:[0,Tz],line:{color:'#f59e0b',width:7},marker:{size:6,color:'#f59e0b'},name:'T(n)'},{type:'scatter3d',mode:'lines+markers',x:[0,snX],y:[0,snY],z:[0,snZ],line:{color:'#10b981',width:6},marker:{size:5,color:'#10b981'},name:'σn'},{type:'scatter3d',mode:'lines+markers',x:[snX,Tx],y:[snY,Ty],z:[snZ,Tz],line:{color:'#c084fc',width:6},marker:{size:5,color:'#c084fc'},name:'τn'}];
+const layout={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'transparent',scene:{xaxis:{title:'X',color:'#94a3b8',gridcolor:'#334155'},yaxis:{title:'Y',color:'#94a3b8',gridcolor:'#334155'},zaxis:{title:'Z',color:'#94a3b8',gridcolor:'#334155'},aspectmode:'cube'},showlegend:true,legend:{font:{color:'#cbd5e1'},orientation:'h',y:0.98}};
+plotKeepView('plot-mod2',traces,layout,{responsive:true,displayModeBar:false});}
+let mod3EyeMohr={x:1.6,y:1.3,z:1.2},mod3EyeCube={x:1.4,y:1.4,z:1.2},mod3MohrRelayoutBound=false,mod3CubeRelayoutBound=false,mod3Mohr3DMode='A';
+const M3_DESCS={A:'<strong class="text-purple-400">Modo A · Círculos clásicos.</strong> Tres círculos coplanares en el plano (σn, τ). C₁₃ (morado) es la envolvente, C₂₃ (rosa) y C₁₂ (azul) los menores. Los rombos marcan σ₁, σ₂, σ₃.',B:'<strong class="text-amber-400">Modo B · Superficie de Mohr.</strong> Lugar geométrico de (σn, τθ, τφ) cuando n̂ recorre todas las direcciones.',C:'<strong class="text-cyan-400">Modo C · Híbrido.</strong> Superficie + tres círculos superpuestos como meridianos.'};
+function setMohr3DMode(m){mod3Mohr3DMode=m;const d=document.getElementById('m3-mode-desc');if(d)d.innerHTML=M3_DESCS[m];updateModule3();}
+function updateModule3(){const is3D=chk('m3_3d_toggle'),i3=document.getElementById('m3_3d_inputs');if(is3D)i3.classList.remove('opacity-40','pointer-events-none');else i3.classList.add('opacity-40','pointer-events-none');
+const sx=num('m3_sx'),sy=num('m3_sy'),sz=is3D?num('m3_sz'):0,txy=num('m3_txy'),tyz=is3D?num('m3_tyz'):0,tzx=is3D?num('m3_tzx'):0,thetaDeg=num('m3_theta');
+const showXYZ=chk('m3_show_xyz'),showPrinc=chk('m3_show_principal'),showVec=chk('m3_show_vector'),showPlane=chk('m3_show_plane');
+let nxv=num('m3_nx')||0,nyv=num('m3_ny')||0,nzv=num('m3_nz')||0;
+const mNv=Math.sqrt(nxv*nxv+nyv*nyv+nzv*nzv);
+const nNullv=mNv<1e-9;
+if(nNullv){nxv=1/Math.sqrt(3);nyv=1/Math.sqrt(3);nzv=1/Math.sqrt(3);}else{nxv/=mNv;nyv/=mNv;nzv/=mNv;}
+const nEff=document.getElementById('m3_n_eff');if(nEff)nEff.textContent='('+nxv.toFixed(3)+', '+nyv.toFixed(3)+', '+nzv.toFixed(3)+')';
+const nWarn=document.getElementById('m3_n_warn');if(nWarn)nWarn.classList.toggle('hidden',!nNullv);
+const tRad0=thetaDeg*Math.PI/180,cTr0=Math.cos(tRad0),sTr0=Math.sin(tRad0);
+const nrxv=nxv*cTr0-nyv*sTr0,nryv=nxv*sTr0+nyv*cTr0,nrzv=nzv;
+const nRot=document.getElementById('m3_n_rot');if(nRot)nRot.textContent='('+nrxv.toFixed(3)+', '+nryv.toFixed(3)+', '+nrzv.toFixed(3)+')';
+const I1=sx+sy+sz,q=I1/3,p1=txy*txy+tyz*tyz+tzx*tzx,p2=Math.pow(sx-q,2)+Math.pow(sy-q,2)+Math.pow(sz-q,2)+2*p1,p=Math.sqrt(p2/6);let s1=q,s2=q,s3=q;if(p!==0){const B11=(sx-q)/p,B22=(sy-q)/p,B33=(sz-q)/p,B12=txy/p,B23=tyz/p,B13=tzx/p;const dB=B11*(B22*B33-B23*B23)-B12*(B12*B33-B23*B13)+B13*(B12*B23-B22*B13);const r=Math.max(-1,Math.min(1,dB/2)),phi=Math.acos(r)/3;s1=q+2*p*Math.cos(phi);s3=q+2*p*Math.cos(phi+2*Math.PI/3);s2=3*q-s1-s3;}
+const sorted=[s1,s2,s3].sort((a,b)=>b-a),sp1=sorted[0],sp2=sorted[1],sp3=sorted[2];
+const c2=(sx+sy)/2,r2=Math.sqrt(Math.pow((sx-sy)/2,2)+Math.pow(txy,2)),sig1_2D=c2+r2,thetaP=0.5*Math.atan2(2*txy,sx-sy)*180/Math.PI;
+const radT=thetaDeg*Math.PI/180;
+const sxpT=c2+((sx-sy)/2)*Math.cos(2*radT)+txy*Math.sin(2*radT);
+const sypT=c2-((sx-sy)/2)*Math.cos(2*radT)-txy*Math.sin(2*radT);
+const txypT=-((sx-sy)/2)*Math.sin(2*radT)+txy*Math.cos(2*radT);
+document.getElementById('m3_sx_p').textContent=sxpT.toFixed(1)+' MPa';
+document.getElementById('m3_sy_p').textContent=sypT.toFixed(1)+' MPa';
+document.getElementById('m3_txy_p').textContent=txypT.toFixed(1)+' MPa';
+document.getElementById('m3_center').textContent=c2.toFixed(1)+' MPa';document.getElementById('m3_radius').textContent=r2.toFixed(1)+' MPa';document.getElementById('m3_sig1').textContent=sig1_2D.toFixed(1)+' MPa';document.getElementById('m3_thetap').textContent=thetaP.toFixed(1)+'º';
+const titleEl=document.getElementById('m3-mohr-title');if(titleEl)titleEl.textContent=is3D?'Círculos de Mohr 3D (triaxial)':'Mohr 2D — plano σx-σy-τxy';
+const descEl=document.getElementById('m3-mode-desc');if(descEl)descEl.innerHTML=M3_DESCS[mod3Mohr3DMode];
+renderMohr2D(sx,sy,sz,txy,tyz,tzx,thetaDeg,is3D,sp1,sp2,sp3,showXYZ,showPrinc,showVec,nrxv,nryv,nrzv);
+renderMohr3D(sp1,sp2,sp3,mod3Mohr3DMode,showXYZ,showPrinc,showVec,showPlane,sx,sy,sz,txy,tyz,tzx,thetaDeg);
+renderStressCube(sx,sy,sz,txy,tyz,tzx,thetaDeg,showXYZ,showPrinc,showVec,showPlane);
+updateModule3Layout();}
+
+function updateModule3Layout(){const sMe=document.getElementById('m3_show_mohr3d'),sCe=document.getElementById('m3_show_cube'),mC=document.getElementById('m3-mohr3d-card'),cC=document.getElementById('m3-cube-card'),row=document.getElementById('m3-3d-row');if(!sMe||!sCe||!mC||!cC||!row)return;const sM=sMe.checked,sC=sCe.checked;if(sM)mC.classList.remove('hidden');else mC.classList.add('hidden');if(sC)cC.classList.remove('hidden');else cC.classList.add('hidden');if(sM&&sC){row.classList.add('md:grid-cols-2');row.classList.remove('md:grid-cols-1');}else{row.classList.remove('md:grid-cols-2');row.classList.add('md:grid-cols-1');}setTimeout(()=>{try{const p2=document.getElementById('plot-mod3-2d');if(p2&&p2.data)Plotly.Plots.resize(p2);if(sM){const p3=document.getElementById('plot-mod3-3d');if(p3&&p3.data)Plotly.Plots.resize(p3);}if(sC){const pc=document.getElementById('plot-mod3-cube');if(pc&&pc.data)Plotly.Plots.resize(pc);}}catch(e){console.warn(e);}},50);}
+
+function renderMohr2D(sx,sy,sz,txy,tyz,tzx,thetaDeg,is3D,sp1,sp2,sp3,showXYZ,showPrinc,showVec,nrx,nry,nrz){
+  let traces=[];
+  const mkC=(c,r)=>{const x=[],y=[];for(let a=0;a<=360;a+=4){const ra=a*Math.PI/180;x.push(c+r*Math.cos(ra));y.push(r*Math.sin(ra));}return{x,y};};
+  if(!is3D){
+    const c=(sx+sy)/2,r=Math.sqrt(Math.pow((sx-sy)/2,2)+Math.pow(txy,2)),sg1=c+r,sg2=c-r;
+    const rad=thetaDeg*Math.PI/180;
+    const sxp=c+((sx-sy)/2)*Math.cos(2*rad)+txy*Math.sin(2*rad);
+    const syp=c-((sx-sy)/2)*Math.cos(2*rad)-txy*Math.sin(2*rad);
+    const txyp=-((sx-sy)/2)*Math.sin(2*rad)+txy*Math.cos(2*rad);
+    const d=mkC(c,r);
+    traces.push({x:d.x,y:d.y,mode:'lines',name:'Círculo',line:{color:'#818cf8',width:2.5}});
+    if(showXYZ){traces.push({x:[sx,sy],y:[-txy,txy],mode:'lines+markers+text',text:['x','y'],textposition:['bottom right','top right'],textfont:{color:'#f59e0b',size:13,family:'monospace'},name:'Ejes x-y',marker:{color:'#f59e0b',size:9,line:{color:'#fff',width:1}},line:{color:'#f59e0b',width:1.5,dash:'dot'}});}
+    if(showVec){
+      const arcR=r*0.55,arcN=40,arcX=[c],arcY=[0];
+      const baseAngle=Math.atan2(-txy,sx-c),arcStart=baseAngle,arcEnd=baseAngle+2*rad;
+      for(let k=0;k<=arcN;k++){const a=arcStart+(arcEnd-arcStart)*(k/arcN);arcX.push(c+arcR*Math.cos(a));arcY.push(arcR*Math.sin(a));}
+      arcX.push(c);arcY.push(0);
+      traces.push({x:arcX,y:arcY,mode:'lines',name:'Arco 2θ',line:{color:'#a78bfa',width:2,dash:'dash'},hoverinfo:'skip'});
+      const midA=baseAngle+rad;
+      traces.push({x:[c+arcR*1.15*Math.cos(midA)],y:[arcR*1.15*Math.sin(midA)],mode:'text',text:['2θ='+(2*thetaDeg).toFixed(0)+'º'],textfont:{color:'#c4b5fd',size:11,family:'monospace'},showlegend:false,hoverinfo:'skip'});
+      traces.push({x:[sxp,syp],y:[-txyp,txyp],mode:'markers+text',text:["x'","y'"],textposition:['bottom left','top left'],textfont:{color:'#34d399',size:12,family:'monospace'},name:'Girado θ='+thetaDeg+'º',marker:{color:'#34d399',size:9,line:{color:'#fff',width:1}}});
+    }
+    if(showPrinc){traces.push({x:[sg2,sg1],y:[0,0],mode:'markers+text',text:['σ₂='+sg2.toFixed(1),'σ₁='+sg1.toFixed(1)],textposition:['bottom center','top center'],textfont:{color:'#f472b6',size:10,family:'monospace'},marker:{color:'#f472b6',size:12,symbol:'diamond',line:{color:'#fff',width:1.5}},name:'Tensiones ppales.'});}
+  } else {
+    const c12=(sp1+sp2)/2,r12=(sp1-sp2)/2,c23=(sp2+sp3)/2,r23=(sp2-sp3)/2,c13=(sp1+sp3)/2,r13=(sp1-sp3)/2;
+    const d12=mkC(c12,r12),d23=mkC(c23,r23),d13=mkC(c13,r13);
+    traces.push({x:d13.x,y:d13.y,mode:'lines',name:'C₁₃ (envolvente)',line:{color:'#a855f7',width:2.8}});
+    traces.push({x:d23.x,y:d23.y,mode:'lines',name:'C₂₃',line:{color:'#f43f5e',width:1.8}});
+    traces.push({x:d12.x,y:d12.y,mode:'lines',name:'C₁₂',line:{color:'#38bdf8',width:1.8}});
+    if(showPrinc){traces.push({x:[sp3,sp2,sp1],y:[0,0,0],mode:'markers+text',text:['σ₃='+sp3.toFixed(1),'σ₂='+sp2.toFixed(1),'σ₁='+sp1.toFixed(1)],textposition:['bottom center','bottom center','top center'],textfont:{color:'#f472b6',size:10,family:'monospace'},marker:{color:'#f472b6',size:12,symbol:'diamond',line:{color:'#fff',width:1.5}},name:'Tensiones ppales.'});}
+    if(showXYZ){
+      /* Caras x, y, z con el mismo convenio de signo que el Mohr 3D */
+      const mX=Math.sqrt(txy*txy+tzx*tzx),mY=Math.sqrt(txy*txy+tyz*tyz),mZ=Math.sqrt(tzx*tzx+tyz*tyz);
+      const yX=mohrTauSign(1,0,0,0,txy,tzx)*mX,yY=mohrTauSign(0,1,0,txy,0,tyz)*mY,yZ=mohrTauSign(0,0,1,tzx,tyz,0)*mZ;
+      const tp=v=>v>=0?'top center':'bottom center';
+      traces.push({x:[sx,sy,sz],y:[yX,yY,yZ],mode:'markers+text',text:['x','y','z'],textposition:[tp(yX),tp(yY),tp(yZ)],textfont:{color:'#ef4444',size:12,family:'monospace'},marker:{color:['#ef4444','#22c55e','#3b82f6'],size:9,line:{color:'#fff',width:1}},name:'Caras x,y,z'});
+    }
+    if(showVec){
+      const Tnx=sx*nrx+txy*nry+tzx*nrz,Tny=txy*nrx+sy*nry+tyz*nrz,Tnz=tzx*nrx+tyz*nry+sz*nrz;
+      const snN=Tnx*nrx+Tny*nry+Tnz*nrz;
+      const vx=Tnx-snN*nrx,vy=Tny-snN*nry,vz=Tnz-snN*nrz;
+      const tnN=Math.sqrt(vx*vx+vy*vy+vz*vz)*mohrTauSign(nrx,nry,nrz,vx,vy,vz);
+      traces.push({x:[snN],y:[tnN],mode:'markers+text',text:['n̂'],textposition:tnN>=0?'top center':'bottom center',textfont:{color:'#34d399',size:12,family:'monospace'},marker:{color:'#34d399',size:11,symbol:'star',line:{color:'#fff',width:1}},name:'n̂ girado θ: ('+snN.toFixed(1)+', '+tnN.toFixed(1)+')'});
+    }
+  }
+  const layout={margin:{l:45,r:15,b:35,t:15},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',xaxis:{title:{text:'σn [MPa]',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155'},yaxis:{title:{text:'τ [MPa]',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',scaleanchor:'x',scaleratio:1},showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',y:-0.28}};
+  plotKeepView('plot-mod3-2d',traces,layout,{responsive:true,displayModeBar:false});
+}
+
+function renderMohr3D(sp1,sp2,sp3,mode,showXYZ,showPrinc,showVec,showPlane,sx,sy,sz,txy,tyz,tzx,thetaDeg){
+  const traces=[];
+  const mkC3=(c,r)=>{const x=[],y=[];for(let a=0;a<=360;a+=4){const ra=a*Math.PI/180;x.push(c+r*Math.cos(ra));y.push(r*Math.sin(ra));}return{x,y};};
+  const c12=(sp1+sp2)/2,r12=(sp1-sp2)/2,c23=(sp2+sp3)/2,r23=(sp2-sp3)/2,c13=(sp1+sp3)/2,r13=(sp1-sp3)/2;
+  const d12=mkC3(c12,r12),d23=mkC3(c23,r23),d13=mkC3(c13,r13);
+  const z0=arr=>arr.map(()=>0);
+  const cTraces=[{type:'scatter3d',mode:'lines',x:d13.x,y:d13.y,z:z0(d13.x),line:{color:'#a855f7',width:5},name:'C₁₃ (envolvente)'},{type:'scatter3d',mode:'lines',x:d23.x,y:d23.y,z:z0(d23.x),line:{color:'#f43f5e',width:3.5},name:'C₂₃'},{type:'scatter3d',mode:'lines',x:d12.x,y:d12.y,z:z0(d12.x),line:{color:'#38bdf8',width:3.5},name:'C₁₂'}];
+  let nx=num('m3_nx')||0,ny=num('m3_ny')||0,nz=num('m3_nz')||0;
+  const mN=Math.sqrt(nx*nx+ny*ny+nz*nz);if(mN<1e-9){nx=1/Math.sqrt(3);ny=1/Math.sqrt(3);nz=1/Math.sqrt(3);}else{nx/=mN;ny/=mN;nz/=mN;}
+  const tRad=thetaDeg*Math.PI/180,cT=Math.cos(tRad),sT=Math.sin(tRad);
+  const nrx=nx*cT-ny*sT,nry=nx*sT+ny*cT,nrz=nz;
+  const Tx=sx*nrx+txy*nry+tzx*nrz,Ty=txy*nrx+sy*nry+tyz*nrz,Tz=tzx*nrx+tyz*nry+sz*nrz;
+  const sn=Tx*nrx+Ty*nry+Tz*nrz;
+  const tn=Math.sqrt(Math.max(0,Tx*Tx+Ty*Ty+Tz*Tz-sn*sn));
+  const sMax=Math.max(Math.abs(sp1),Math.abs(sp3),1);
+  if(mode==='A'){cTraces.forEach(t=>traces.push(t));}
+  else if(mode==='B'){const nTh=50,nPh=80,xA=[],yA=[],zA=[],cA=[];for(let i=0;i<=nTh;i++){const th=(i/nTh)*Math.PI,sT2=Math.sin(th),cT2=Math.cos(th),xR=[],yR=[],zR=[],cR=[];for(let j=0;j<=nPh;j++){const ph=(j/nPh)*2*Math.PI,cP=Math.cos(ph),sP=Math.sin(ph);const n1=sT2*cP,n2=sT2*sP,n3=cT2;const sns=sp1*n1*n1+sp2*n2*n2+sp3*n3*n3;const T1=sp1*n1,T2=sp2*n2,T3=sp3*n3;const t1=T1-sns*n1,t2=T2-sns*n2,t3=T3-sns*n3;const e1=cT2*cP,e2=cT2*sP,e3=-sT2,f1=-sP,f2=cP,f3=0;const tTh=t1*e1+t2*e2+t3*e3,tPh=t1*f1+t2*f2+t3*f3;xR.push(sns);yR.push(tTh);zR.push(tPh);cR.push(Math.sqrt(tTh*tTh+tPh*tPh));}xA.push(xR);yA.push(yR);zA.push(zR);cA.push(cR);}traces.push({type:'surface',x:xA,y:yA,z:zA,surfacecolor:cA,colorscale:'Viridis',showscale:true,opacity:1,colorbar:{title:{text:'|τ| [MPa]',font:{color:'#cbd5e1',size:10}},tickfont:{color:'#cbd5e1',size:9},len:0.7,thickness:12},name:'Superficie Mohr 3D'});}
+  else{const nTh=50,nPh=80,xA=[],yA=[],zA=[],cA=[];for(let i=0;i<=nTh;i++){const th=(i/nTh)*Math.PI,sT2=Math.sin(th),cT2=Math.cos(th),xR=[],yR=[],zR=[],cR=[];for(let j=0;j<=nPh;j++){const ph=(j/nPh)*2*Math.PI,cP=Math.cos(ph),sP=Math.sin(ph);const n1=sT2*cP,n2=sT2*sP,n3=cT2;const sns=sp1*n1*n1+sp2*n2*n2+sp3*n3*n3;const T1=sp1*n1,T2=sp2*n2,T3=sp3*n3;const t1=T1-sns*n1,t2=T2-sns*n2,t3=T3-sns*n3;const e1=cT2*cP,e2=cT2*sP,e3=-sT2,f1=-sP,f2=cP,f3=0;const tTh=t1*e1+t2*e2+t3*e3,tPh=t1*f1+t2*f2+t3*f3;xR.push(sns);yR.push(tTh);zR.push(tPh);cR.push(Math.sqrt(tTh*tTh+tPh*tPh));}xA.push(xR);yA.push(yR);zA.push(zR);cA.push(cR);}traces.push({type:'surface',x:xA,y:yA,z:zA,surfacecolor:cA,colorscale:'Viridis',showscale:false,opacity:0.45,name:'Superficie Mohr 3D'});cTraces.forEach(t=>traces.push(t));}
+  traces.push({type:'scatter3d',mode:'lines',x:[Math.min(sp3,0),Math.max(sp1,0)],y:[0,0],z:[0,0],line:{color:'#64748b',width:3,dash:'dot'},name:'Eje σn',hoverinfo:'skip',showlegend:false});
+  if(showPrinc){traces.push({type:'scatter3d',mode:'markers+text',x:[sp3,sp2,sp1],y:[0,0,0],z:[0,0,0],text:['σ₃='+sp3.toFixed(1),'σ₂='+sp2.toFixed(1),'σ₁='+sp1.toFixed(1)],textposition:'bottom center',textfont:{color:'#f472b6',size:10,family:'monospace'},marker:{color:'#f472b6',size:7,symbol:'diamond',line:{color:'#fff',width:1.5}},name:'Tensiones ppales.'});}
+  if(showXYZ){
+    /* tau_vec de cada cara: x->(0,txy,tzx)  y->(txy,0,tyz)  z->(tzx,tyz,0)  */
+    const mX=Math.sqrt(txy*txy+tzx*tzx),mY=Math.sqrt(txy*txy+tyz*tyz),mZ=Math.sqrt(tzx*tzx+tyz*tyz);
+    const yX=mohrTauSign(1,0,0,0,txy,tzx)*mX,yY=mohrTauSign(0,1,0,txy,0,tyz)*mY,yZ=mohrTauSign(0,0,1,tzx,tyz,0)*mZ;
+    const tp=v=>v>=0?'top center':'bottom center';
+    traces.push({type:'scatter3d',mode:'markers+text',x:[sx,sy,sz],y:[yX,yY,yZ],z:[0,0,0],text:['x','y','z'],textposition:[tp(yX),tp(yY),tp(yZ)],textfont:{color:'#ef4444',size:13,family:'monospace'},marker:{color:['#ef4444','#22c55e','#3b82f6'],size:9,symbol:'circle',line:{color:'#fff',width:1}},name:'Ejes xyz'});
+  }
+  if(showVec){
+    const tvx=Tx-sn*nrx,tvy=Ty-sn*nry,tvz=Tz-sn*nrz;
+    const tnS=mohrTauSign(nrx,nry,nrz,tvx,tvy,tvz)*tn;
+    traces.push({type:'scatter3d',mode:'lines+markers',x:[0,sn],y:[0,tnS],z:[0,0],line:{color:'#f59e0b',width:7},marker:{size:8,color:'#f59e0b'},name:'T(n̂) actual'});
+    traces.push({type:'scatter3d',mode:'lines',x:[0,sn],y:[0,0],z:[0,0],line:{color:'#10b981',width:5},name:'σn̂'});
+    traces.push({type:'scatter3d',mode:'lines',x:[sn,sn],y:[0,tnS],z:[0,0],line:{color:'#c084fc',width:5},name:'τn̂'});
+  }
+  if(showPlane){let u1x,u1y,u1z;if(Math.abs(nrz)<0.9){u1x=-nry;u1y=nrx;u1z=0;}else{u1x=0;u1y=-nrz;u1z=nry;}const mU=Math.sqrt(u1x*u1x+u1y*u1y+u1z*u1z)||1;u1x/=mU;u1y/=mU;u1z/=mU;const u2x=nry*u1z-nrz*u1y,u2y=nrz*u1x-nrx*u1z,u2z=nrx*u1y-nry*u1x;const pS2=Math.max(sMax*0.9,1),pX=[],pY=[],pZ=[];for(let i=-1;i<=1;i+=2){const rX=[],rY=[],rZ=[];for(let j=-1;j<=1;j+=2){rX.push((i*u1x+j*u2x)*pS2);rY.push((i*u1y+j*u2y)*pS2);rZ.push((i*u1z+j*u2z)*pS2);}pX.push(rX);pY.push(rY);pZ.push(rZ);}traces.push({type:'surface',x:pX,y:pY,z:pZ,colorscale:[[0,'#0284c7'],[1,'#0284c7']],showscale:false,opacity:0.18,name:'Plano π_n̂',hoverinfo:'skip'});traces.push({type:'scatter3d',mode:'lines+markers',x:[0,nrx*pS2*0.7],y:[0,nry*pS2*0.7],z:[0,nrz*pS2*0.7],line:{color:'#38bdf8',width:4},marker:{size:5,color:'#38bdf8'},name:'n̂'});}
+  const layout={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'transparent',scene:{xaxis:{title:{text:'σn',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155'},yaxis:{title:{text:'τθ',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155'},zaxis:{title:{text:'τφ',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155'},aspectmode:'cube',camera:{eye:mod3EyeMohr}},showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',y:0.02,x:0.5,xanchor:'center'}};
+  plotKeepView('plot-mod3-3d',traces,layout,{responsive:true,displayModeBar:false}).then(()=>{if(!mod3MohrRelayoutBound){mod3MohrRelayoutBound=true;const pEl=document.getElementById('plot-mod3-3d');if(pEl)pEl.on('plotly_relayout',ed=>{const ey=(ed&&ed['scene.camera']&&ed['scene.camera'].eye)||(ed&&ed['scene.camera.eye']);if(ey&&typeof ey==='object')mod3EyeMohr={x:ey.x,y:ey.y,z:ey.z};});}}).catch(e=>console.warn('m3 mohr3d:',e));
+}
+
+function renderStressCube(sx,sy,sz,txy,tyz,tzx,thetaDeg,showXYZ,showPrinc,showVec,showPlane){
+let nx=num('m3_nx')||0,ny=num('m3_ny')||0,nz=num('m3_nz')||0;const mN=Math.sqrt(nx*nx+ny*ny+nz*nz);if(mN<1e-9){nx=1/Math.sqrt(3);ny=1/Math.sqrt(3);nz=1/Math.sqrt(3);}else{nx/=mN;ny/=mN;nz/=mN;}
+const tR=thetaDeg*Math.PI/180,cT=Math.cos(tR),sT=Math.sin(tR);const nxr=nx*cT-ny*sT,nyr=nx*sT+ny*cT,nzr=nz;nx=nxr;ny=nyr;nz=nzr;
+const Tx=sx*nx+txy*ny+tzx*nz,Ty=txy*nx+sy*ny+tyz*nz,Tz=tzx*nx+tyz*ny+sz*nz,sn=Tx*nx+Ty*ny+Tz*nz,snX=sn*nx,snY=sn*ny,snZ=sn*nz,tauX=Tx-snX,tauY=Ty-snY,tauZ=Tz-snZ;
+const cM={type:'mesh3d',x:[-0.5,0.5,0.5,-0.5,-0.5,0.5,0.5,-0.5],y:[-0.5,-0.5,0.5,0.5,-0.5,-0.5,0.5,0.5],z:[-0.5,-0.5,-0.5,-0.5,0.5,0.5,0.5,0.5],i:[7,0,0,0,4,4,2,6,4,0,3,7],j:[3,4,1,2,5,6,5,2,0,1,6,5],k:[0,7,2,3,6,7,1,1,5,5,2,6],color:'#1e293b',opacity:0.85,flatshading:true,lighting:{ambient:0.8,diffuse:0.6},hoverinfo:'none',showlegend:false};
+const wX=[-0.5,0.5,0.5,-0.5,-0.5,null,-0.5,0.5,0.5,-0.5,-0.5,null,-0.5,-0.5,null,0.5,0.5,null,0.5,0.5,null,-0.5,-0.5];
+const wY=[-0.5,-0.5,0.5,0.5,-0.5,null,-0.5,-0.5,0.5,0.5,-0.5,null,-0.5,-0.5,null,-0.5,-0.5,null,0.5,0.5,null,0.5,0.5];
+const wZ=[-0.5,-0.5,-0.5,-0.5,-0.5,null,0.5,0.5,0.5,0.5,0.5,null,-0.5,0.5,null,-0.5,0.5,null,-0.5,0.5,null,-0.5,0.5];
+const cE={type:'scatter3d',mode:'lines',x:wX,y:wY,z:wZ,line:{color:'#64748b',width:3},hoverinfo:'none',showlegend:false};
+const traces=[cM,cE],annots=[];
+function fs(){const c=Array.from(arguments);return 0.4/Math.max.apply(null,c.map(Math.abs).concat([5]));}
+function addV(fx,fy,fz,dx,dy,dz,color,label,scale){if(dx===0&&dy===0&&dz===0)return;const mg=Math.sqrt(dx*dx+dy*dy+dz*dz),ux=dx/mg,uy=dy/mg,uz=dz/mg;const nfx=fx*2,nfy=fy*2,nfz=fz*2,dot=dx*nfx+dy*nfy+dz*nfz;const vL=Math.max(mg*scale,0.2),cL=Math.min(0.13,vL*0.45);let bX,bY,bZ,tX,tY,tZ,inw=dot<-1e-5;if(inw){tX=fx;tY=fy;tZ=fz;bX=fx-ux*vL;bY=fy-uy*vL;bZ=fz-uz*vL;}else{bX=fx;bY=fy;bZ=fz;tX=fx+ux*vL;tY=fy+uy*vL;tZ=fz+uz*vL;}const eX=tX-ux*cL,eY=tY-uy*cL,eZ=tZ-uz*cL;traces.push({type:'scatter3d',mode:'lines',x:[bX,eX],y:[bY,eY],z:[bZ,eZ],line:{color:color,width:6},showlegend:false,hoverinfo:'none'});traces.push({type:'cone',x:[tX],y:[tY],z:[tZ],u:[ux],v:[uy],w:[uz],sizemode:'absolute',sizeref:cL*1.2,showscale:false,colorscale:[[0,color],[1,color]],hoverinfo:'none',showlegend:false,anchor:'tip'});const lx=inw?bX-ux*0.13:tX+ux*0.13,ly=inw?bY-uy*0.13:tY+uy*0.13,lz=inw?bZ-uz*0.13:tZ+uz*0.13;annots.push({x:lx,y:ly,z:lz,text:'<b style="color:'+color+'">'+label+'</b>',font:{size:10,family:'monospace'},showarrow:false});}
+function addVAt(fx,fy,fz,ox,oy,oz,dx,dy,dz,color,label,scale){addV(fx+ox,fy+oy,fz+oz,dx,dy,dz,color,label,scale);}
+const eye=mod3EyeCube,OFF=0.18,sX=fs(sx,txy,tzx),sY=fs(sy,txy,tyz),sZ=fs(sz,tzx,tyz);
+if(showXYZ){
+if(eye.x>-0.1){addVAt(0.5,0,0,0,0,0,sx,0,0,'#ef4444','σx='+sx,sX);addVAt(0.5,0,0,0,OFF,0,0,txy,0,'#ef4444','τxy='+txy,sX);addVAt(0.5,0,0,0,0,OFF,0,0,tzx,'#ef4444','τxz='+tzx,sX);}
+if(eye.x<0.1){addVAt(-0.5,0,0,0,0,0,-sx,0,0,'#ef4444','σx='+sx,sX);addVAt(-0.5,0,0,0,-OFF,0,0,-txy,0,'#ef4444','τxy='+txy,sX);addVAt(-0.5,0,0,0,0,-OFF,0,0,-tzx,'#ef4444','τxz='+tzx,sX);}
+if(eye.y>-0.1){addVAt(0,0.5,0,0,0,0,0,sy,0,'#22c55e','σy='+sy,sY);addVAt(0,0.5,0,OFF,0,0,txy,0,0,'#22c55e','τyx='+txy,sY);addVAt(0,0.5,0,0,0,OFF,0,0,tyz,'#22c55e','τyz='+tyz,sY);}
+if(eye.y<0.1){addVAt(0,-0.5,0,0,0,0,0,-sy,0,'#22c55e','σy='+sy,sY);addVAt(0,-0.5,0,-OFF,0,0,-txy,0,0,'#22c55e','τyx='+txy,sY);addVAt(0,-0.5,0,0,0,-OFF,0,0,-tyz,'#22c55e','τyz='+tyz,sY);}
+if(eye.z>-0.1){addVAt(0,0,0.5,0,0,0,0,0,sz,'#3b82f6','σz='+sz,sZ);addVAt(0,0,0.5,OFF,0,0,tzx,0,0,'#3b82f6','τzx='+tzx,sZ);addVAt(0,0,0.5,0,OFF,0,0,tyz,0,'#3b82f6','τzy='+tyz,sZ);}
+if(eye.z<0.1){addVAt(0,0,-0.5,0,0,0,0,0,-sz,'#3b82f6','σz='+sz,sZ);addVAt(0,0,-0.5,-OFF,0,0,-tzx,0,0,'#3b82f6','τzx='+tzx,sZ);addVAt(0,0,-0.5,0,-OFF,0,0,-tyz,0,'#3b82f6','τzy='+tyz,sZ);}
+}
+if(showPlane){let u1x,u1y,u1z;if(Math.abs(nz)<0.9){u1x=-ny;u1y=nx;u1z=0;}else{u1x=0;u1y=-nz;u1z=ny;}const mU1=Math.sqrt(u1x*u1x+u1y*u1y+u1z*u1z)||1;u1x/=mU1;u1y/=mU1;u1z/=mU1;const u2x=ny*u1z-nz*u1y,u2y=nz*u1x-nx*u1z,u2z=nx*u1y-ny*u1x;const pS=0.7,pGX=[],pGY=[],pGZ=[];for(let i=-1;i<=1;i+=2){const rX=[],rY=[],rZ=[];for(let j=-1;j<=1;j+=2){rX.push((i*u1x+j*u2x)*pS);rY.push((i*u1y+j*u2y)*pS);rZ.push((i*u1z+j*u2z)*pS);}pGX.push(rX);pGY.push(rY);pGZ.push(rZ);}traces.push({type:'surface',x:pGX,y:pGY,z:pGZ,colorscale:[[0,'#0284c7'],[1,'#0284c7']],showscale:false,opacity:0.22,name:'Plano π_n̂',hoverinfo:'skip'});traces.push({type:'scatter3d',mode:'lines+markers',x:[0,nx*0.9],y:[0,ny*0.9],z:[0,nz*0.9],line:{color:'#38bdf8',width:5},marker:{size:4,color:'#38bdf8'},name:'n̂'});}
+if(showVec){const mT=Math.max(Math.abs(Tx),Math.abs(Ty),Math.abs(Tz),10),vS=0.85/mT;traces.push({type:'scatter3d',mode:'lines+markers',x:[0,Tx*vS],y:[0,Ty*vS],z:[0,Tz*vS],line:{color:'#f59e0b',width:8},marker:{size:6,color:'#f59e0b'},name:'T(n̂)'});traces.push({type:'scatter3d',mode:'lines+markers',x:[0,snX*vS],y:[0,snY*vS],z:[0,snZ*vS],line:{color:'#10b981',width:6},marker:{size:5,color:'#10b981'},name:'σn̂'});traces.push({type:'scatter3d',mode:'lines+markers',x:[snX*vS,Tx*vS],y:[snY*vS,Ty*vS],z:[snZ*vS,Tz*vS],line:{color:'#c084fc',width:6},marker:{size:5,color:'#c084fc'},name:'τn̂'});annots.push({x:Tx*vS+0.1,y:Ty*vS+0.1,z:Tz*vS+0.1,text:'<b style="color:#f59e0b">T</b>',font:{size:13,family:'monospace'},showarrow:false});annots.push({x:snX*vS-0.1,y:snY*vS-0.1,z:snZ*vS-0.1,text:'<b style="color:#10b981">σn</b>',font:{size:12,family:'monospace'},showarrow:false});}
+if(showPrinc){const tRad2=thetaDeg*Math.PI/180,cT2=Math.cos(tRad2),sT2=Math.sin(tRad2);traces.push({type:'scatter3d',mode:'lines+text',x:[0,cT2*0.9],y:[0,sT2*0.9],z:[0,0],line:{color:'#f472b6',width:5},text:['','1̂'],textfont:{color:'#f472b6',size:11,family:'monospace'},name:'1̂'});traces.push({type:'scatter3d',mode:'lines+text',x:[0,-sT2*0.9],y:[0,cT2*0.9],z:[0,0],line:{color:'#a855f7',width:5},text:['','2̂'],textfont:{color:'#a855f7',size:11,family:'monospace'},name:'2̂'});traces.push({type:'scatter3d',mode:'lines+text',x:[0,0],y:[0,0],z:[0,0.9],line:{color:'#c084fc',width:5},text:['','3̂'],textfont:{color:'#c084fc',size:11,family:'monospace'},name:'3̂'});}
+const layout={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'transparent',scene:{xaxis:{title:'X',color:'#ef4444',gridcolor:'#334155',range:[-1.1,1.1]},yaxis:{title:'Y',color:'#22c55e',gridcolor:'#334155',range:[-1.1,1.1]},zaxis:{title:'Z',color:'#3b82f6',gridcolor:'#334155',range:[-1.1,1.1]},aspectmode:'cube',camera:{eye:mod3EyeCube},annotations:annots},showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',y:0.02,x:0.5,xanchor:'center'}};
+plotKeepView('plot-mod3-cube',traces,layout,{responsive:true,displayModeBar:false}).then(()=>{if(!mod3CubeRelayoutBound){mod3CubeRelayoutBound=true;const pEl=document.getElementById('plot-mod3-cube');if(pEl)pEl.on('plotly_relayout',ed=>{const ey=(ed&&ed['scene.camera']&&ed['scene.camera'].eye)||(ed&&ed['scene.camera.eye']);if(ey&&typeof ey==='object')mod3EyeCube={x:ey.x,y:ey.y,z:ey.z};});}}).catch(e=>console.warn('m3 cube:',e));}
+
+function setM4Mode(){const mode=document.querySelector('input[name="m4_mode"]:checked').value;document.getElementById('m4-stress-inputs').classList.toggle('hidden',mode!=='stress');document.getElementById('m4-strain-inputs').classList.toggle('hidden',mode!=='strain');updateModule4();}
+function onM4MatChange(isManual){const sel=document.getElementById('m4_material');if(!isManual&&sel.value!=='custom'){const parts=sel.value.split(',');document.getElementById('m4_E').value=parts[0];document.getElementById('m4_nu').value=parts[1];}else if(isManual){sel.value='custom';}updateModule4();}
+function updateModule4(){
+  const E=num('m4_E')*1000,nu=num('m4_nu');
+  const G=E/(2*(1+nu)),lambda=E*nu/((1+nu)*(1-2*nu));
+  const mode=document.querySelector('input[name="m4_mode"]:checked').value;
+  let sx,sy,sz,txy,tyz,tzx,ex,ey,ez,gxy,gyz,gzx;
+  if(mode==='stress'){
+    sx=num('m4_sx');sy=num('m4_sy');sz=num('m4_sz');txy=num('m4_txy');tyz=num('m4_tyz');tzx=num('m4_tzx');
+    ex=(sx-nu*(sy+sz))/E;ey=(sy-nu*(sx+sz))/E;ez=(sz-nu*(sx+sy))/E;
+    gxy=txy/G;gyz=tyz/G;gzx=tzx/G;
+  }else{
+    ex=num('m4_ex')*1e-6;ey=num('m4_ey')*1e-6;ez=num('m4_ez')*1e-6;
+    gxy=num('m4_gxy')*1e-6;gyz=num('m4_gyz')*1e-6;gzx=num('m4_gzx')*1e-6;
+    const tr=ex+ey+ez;
+    sx=lambda*tr+2*G*ex;sy=lambda*tr+2*G*ey;sz=lambda*tr+2*G*ez;
+    txy=G*gxy;tyz=G*gyz;tzx=G*gzx;
+  }
+  const eq=document.getElementById('m4-equation-info');
+  if(mode==='stress'){
+    eq.innerHTML='<strong class="text-amber-400">Modo σ → ε:</strong> <em>Ley de Hooke generalizada</em><br>ε<sub>i</sub> = (1/E)[σ<sub>i</sub> − ν(σ<sub>j</sub>+σ<sub>k</sub>)], γ<sub>ij</sub> = τ<sub>ij</sub>/G<br><span class="text-slate-500">E = '+(E/1000).toFixed(0)+' GPa, ν = '+nu.toFixed(2)+', G = '+(G/1000).toFixed(2)+' GPa</span>';
+  }else{
+    eq.innerHTML='<strong class="text-emerald-400">Modo ε → σ:</strong> <em>Ecuaciones de Lamé</em><br>σ<sub>i</sub> = λ·tr(ε) + 2μ·ε<sub>i</sub>, τ<sub>ij</sub> = μ·γ<sub>ij</sub><br><span class="text-slate-500">λ = '+(lambda/1000).toFixed(2)+' GPa, μ = G = '+(G/1000).toFixed(2)+' GPa</span>';
+  }
+  const out=document.getElementById('m4-output-values');
+  if(mode==='stress'){
+    out.innerHTML='<div class="flex justify-between"><span class="text-slate-400">εx:</span><span class="text-white">'+(ex*1e6).toFixed(1)+' με</span></div><div class="flex justify-between"><span class="text-slate-400">εy:</span><span class="text-white">'+(ey*1e6).toFixed(1)+' με</span></div><div class="flex justify-between"><span class="text-slate-400">εz:</span><span class="text-white">'+(ez*1e6).toFixed(1)+' με</span></div><div class="flex justify-between"><span class="text-slate-400">γxy:</span><span class="text-amber-300">'+(gxy*1e6).toFixed(1)+' με</span></div><div class="flex justify-between"><span class="text-slate-400">γyz:</span><span class="text-amber-300">'+(gyz*1e6).toFixed(1)+' με</span></div><div class="flex justify-between"><span class="text-slate-400">γzx:</span><span class="text-amber-300">'+(gzx*1e6).toFixed(1)+' με</span></div>';
+  }else{
+    out.innerHTML='<div class="flex justify-between"><span class="text-slate-400">σx:</span><span class="text-white">'+sx.toFixed(2)+' MPa</span></div><div class="flex justify-between"><span class="text-slate-400">σy:</span><span class="text-white">'+sy.toFixed(2)+' MPa</span></div><div class="flex justify-between"><span class="text-slate-400">σz:</span><span class="text-white">'+sz.toFixed(2)+' MPa</span></div><div class="flex justify-between"><span class="text-slate-400">τxy:</span><span class="text-amber-300">'+txy.toFixed(2)+' MPa</span></div><div class="flex justify-between"><span class="text-slate-400">τyz:</span><span class="text-amber-300">'+tyz.toFixed(2)+' MPa</span></div><div class="flex justify-between"><span class="text-slate-400">τzx:</span><span class="text-amber-300">'+tzx.toFixed(2)+' MPa</span></div>';
+  }
+  let nx=num('m4_nx')||0,ny=num('m4_ny')||0,nz=num('m4_nz')||0;
+  const mN=Math.sqrt(nx*nx+ny*ny+nz*nz);
+  const nNull=mN<1e-9;
+  if(nNull){nx=1/Math.sqrt(3);ny=1/Math.sqrt(3);nz=1/Math.sqrt(3);}else{nx/=mN;ny/=mN;nz/=mN;}
+  const nd=document.getElementById('m4_n_eff');if(nd)nd.textContent='('+nx.toFixed(3)+', '+ny.toFixed(3)+', '+nz.toFixed(3)+')';
+  const nWarn=document.getElementById('m4_n_warn');if(nWarn)nWarn.classList.toggle('hidden',!nNull);
+  const Tx=sx*nx+txy*ny+tzx*nz,Ty=txy*nx+sy*ny+tyz*nz,Tz=tzx*nx+tyz*ny+sz*nz;
+  const sn=Tx*nx+Ty*ny+Tz*nz;
+  const snx=sn*nx,sny=sn*ny,snz=sn*nz;
+  const taux=Tx-snx,tauy=Ty-sny,tauz=Tz-snz;
+  const tauMag=Math.sqrt(taux*taux+tauy*tauy+tauz*tauz);
+  const maxDef=Math.max(Math.abs(ex),Math.abs(ey),Math.abs(ez),Math.abs(gxy)/2,Math.abs(gyz)/2,Math.abs(gzx)/2,1e-10);
+  const amp=Math.min(0.20/maxDef,5000);
+  const ampSat=amp>=4999;
+  const ampWarn=document.getElementById('m4_amp_warn');if(ampWarn)ampWarn.classList.toggle('hidden',!ampSat);
+  const maxS=Math.max(Math.abs(Tx),Math.abs(Ty),Math.abs(Tz),Math.abs(sn),tauMag,1);
+  const scl=0.6/maxS;
+  const oX=[-0.5,0.5,0.5,-0.5,-0.5,null,-0.5,0.5,0.5,-0.5,-0.5,null,-0.5,-0.5,null,0.5,0.5,null,0.5,0.5,null,-0.5,-0.5];
+  const oY=[-0.5,-0.5,0.5,0.5,-0.5,null,-0.5,-0.5,0.5,0.5,-0.5,null,-0.5,-0.5,null,-0.5,-0.5,null,0.5,0.5,null,0.5,0.5];
+  const oZ=[-0.5,-0.5,-0.5,-0.5,-0.5,null,0.5,0.5,0.5,0.5,0.5,null,-0.5,0.5,null,-0.5,0.5,null,-0.5,0.5,null,-0.5,0.5];
+  const hxy=gxy/2,hyz=gyz/2,hzx=gzx/2;
+  const dX=[],dY=[],dZ=[];
+  for(let i=0;i<oX.length;i++){
+    if(oX[i]===null){dX.push(null);dY.push(null);dZ.push(null);}
+    else{const x=oX[i],y=oY[i],z=oZ[i];
+      dX.push(x+amp*(x*ex+y*hxy+z*hzx));
+      dY.push(y+amp*(y*ey+x*hxy+z*hyz));
+      dZ.push(z+amp*(z*ez+x*hzx+y*hyz));
+    }
+  }
+  const t3=[
+    {type:'scatter3d',mode:'lines',x:oX,y:oY,z:oZ,line:{color:'#475569',width:3},name:'Original'},
+    {type:'scatter3d',mode:'lines',x:dX,y:dY,z:dZ,line:{color:'#10b981',width:5},name:'Deformado'},
+    {type:'scatter3d',mode:'lines+markers',x:[0,nx*0.9],y:[0,ny*0.9],z:[0,nz*0.9],line:{color:'#38bdf8',width:4},marker:{size:5,color:'#38bdf8'},name:'n̂ = ('+nx.toFixed(3)+', '+ny.toFixed(3)+', '+nz.toFixed(3)+')'},
+    {type:'scatter3d',mode:'lines+markers',x:[0,Tx*scl],y:[0,Ty*scl],z:[0,Tz*scl],line:{color:'#ef4444',width:8},marker:{size:6,color:'#ef4444'},name:'T(n̂) = ('+Tx.toFixed(1)+', '+Ty.toFixed(1)+', '+Tz.toFixed(1)+') MPa'},
+    {type:'scatter3d',mode:'lines+markers',x:[0,snx*scl],y:[0,sny*scl],z:[0,snz*scl],line:{color:'#10b981',width:6},marker:{size:5,color:'#10b981'},name:'σn·n̂ = '+sn.toFixed(2)+' MPa'},
+    {type:'scatter3d',mode:'lines+markers',x:[snx*scl,Tx*scl],y:[sny*scl,Ty*scl],z:[snz*scl,Tz*scl],line:{color:'#c084fc',width:6},marker:{size:5,color:'#c084fc'},name:'τn = '+tauMag.toFixed(2)+' MPa'}
+  ];
+  const l3={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'transparent',scene:{xaxis:{title:'X',range:[-1,1],color:'#94a3b8'},yaxis:{title:'Y',range:[-1,1],color:'#94a3b8'},zaxis:{title:'Z',range:[-1,1],color:'#94a3b8'},aspectmode:'cube'},showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',y:0.95}};
+  plotKeepView('plot-mod4-3d',t3,l3,{responsive:true,displayModeBar:false});
+  function d2(eId,u1,v1,guv,lu,lv,Tu,Tv,snu,snv){
+    const h=guv/2;
+    const o2u=[-0.5,0.5,0.5,-0.5,-0.5],o2v=[-0.5,-0.5,0.5,0.5,-0.5];
+    const d2u=[-0.5+amp*(-0.5*u1-0.5*h),0.5+amp*(0.5*u1-0.5*h),0.5+amp*(0.5*u1+0.5*h),-0.5+amp*(-0.5*u1+0.5*h),-0.5+amp*(-0.5*u1-0.5*h)];
+    const d2v=[-0.5+amp*(-0.5*v1-0.5*h),-0.5+amp*(-0.5*v1+0.5*h),0.5+amp*(0.5*v1+0.5*h),0.5+amp*(0.5*v1-0.5*h),-0.5+amp*(-0.5*v1-0.5*h)];
+    const t2=[
+      {x:o2u,y:o2v,mode:'lines',line:{color:'#475569',width:2},showlegend:false},
+      {x:d2u,y:d2v,mode:'lines',line:{color:'#f59e0b',width:3},showlegend:false},
+      {x:[0,Tu*scl],y:[0,Tv*scl],mode:'lines+markers',line:{color:'#ef4444',width:6},marker:{size:7,color:'#ef4444'},showlegend:false},
+      {x:[0,snu*scl],y:[0,snv*scl],mode:'lines',line:{color:'#10b981',width:5},showlegend:false},
+      {x:[snu*scl,Tu*scl],y:[snv*scl,Tv*scl],mode:'lines',line:{color:'#c084fc',width:5},showlegend:false}
+    ];
+    const l2={margin:{l:25,r:10,b:25,t:10},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',xaxis:{title:lu,color:'#94a3b8',range:[-1,1],gridcolor:'#1e293b'},yaxis:{title:lv,color:'#94a3b8',range:[-1,1],gridcolor:'#1e293b'},showlegend:false};
+    plotKeepView(eId,t2,l2,{responsive:true,displayModeBar:false});
+  }
+  d2('plot-mod4-xy',ex,ey,gxy,'X','Y',Tx,Ty,snx,sny);
+  d2('plot-mod4-yz',ey,ez,gyz,'Y','Z',Ty,Tz,sny,snz);
+  d2('plot-mod4-zx',ez,ex,gzx,'Z','X',Tz,Tx,snz,snx);
+
+  /* --- Circulos de Mohr comparados: tensiones vs deformaciones --- */
+  updateModule4Layout();
+  const mSel=document.querySelector('input[name="m4_mohr_state"]:checked');
+  const mMode=mSel?mSel.value:'triax';
+  const oXYZ=chk('m4_mohr_xyz'),oPr=chk('m4_mohr_princ'),oN=chk('m4_mohr_n'),nU={x:nx,y:ny,z:nz};
+  if(chk('m4_show_mohr_s'))renderMohrPanel('plot-mod4-mohr-s',
+    {xx:sx,yy:sy,zz:sz,xy:txy,yz:tyz,zx:tzx},
+    {mode:mMode,showXYZ:oXYZ,showPrinc:oPr,showN:oN,n:nU,xlab:'σ [MPa]',ylab:'τ [MPa]',dec:1,unit:'MPa',tag:'σ'});
+  if(chk('m4_show_mohr_e')){const K=1e6;renderMohrPanel('plot-mod4-mohr-e',
+    {xx:ex*K,yy:ey*K,zz:ez*K,xy:gxy/2*K,yz:gyz/2*K,zx:gzx/2*K},
+    {mode:mMode,showXYZ:oXYZ,showPrinc:oPr,showN:oN,n:nU,xlab:'ε [µε]',ylab:'γ/2 [µε]',dec:0,unit:'µε',tag:'ε'});}
+}
+
+let m5Mode='direct';
+const M5_PRESETS={rect_0_45_90:[0,45,90],rect_45_90_135:[45,90,135],delta_0_60_120:[0,60,120],rot_30_75_120:[30,75,120]};
+function markCustom(){const s=document.getElementById('m5_preset');if(s)s.value='custom';}
+function setRosettePreset(){const p=document.getElementById('m5_preset').value,P=M5_PRESETS[p];
+if(P){document.getElementById('m5_thA').value=P[0];document.getElementById('m5_thB').value=P[1];document.getElementById('m5_thC').value=P[2];}
+updateModule5();}
+function m5Set(id,v){const e=document.getElementById(id);if(!e||document.activeElement===e)return;
+const r=Math.round(v*10)/10;if(parseFloat(e.value)!==r)e.value=r;}
+
+function setM5Mode(m){m5Mode=(m==='inverse')?'inverse':'direct';const d=(m5Mode==='direct');
+const ON='bg-indigo-600 text-white shadow',OFF='text-slate-300 hover:bg-slate-700/60';
+const bD=document.getElementById('m5_btn_direct'),bI=document.getElementById('m5_btn_inverse');
+const cls='text-xs px-3 py-1.5 rounded-md font-medium transition flex items-center gap-2 ';
+if(bD)bD.className=cls+(d?ON:OFF);if(bI)bI.className=cls+(d?OFF:ON);
+const IA='w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white';
+const IB='w-full bg-slate-950/70 border border-slate-800 rounded px-2 py-1.5 text-cyan-300 font-bold';
+['m5_eA','m5_eB','m5_eC'].forEach(id=>{const e=document.getElementById(id);if(e){e.readOnly=!d;e.className=d?IA:IB;}});
+['m5_tex','m5_tey','m5_tgxy'].forEach(id=>{const e=document.getElementById(id);if(e){e.readOnly=d;e.className=d?IB:IA;}});
+const CIN='rounded-lg border p-3 space-y-2 bg-slate-900/60 border-slate-700',
+      COUT='rounded-lg border p-3 space-y-2 bg-cyan-950/25 border-cyan-800/50';
+const bl=document.getElementById('m5-box-lect'),bt=document.getElementById('m5-box-tens');
+if(bl)bl.className=d?CIN:COUT;if(bt)bt.className=d?COUT:CIN;
+const ll=document.getElementById('m5-lbl-lect'),lt=document.getElementById('m5-lbl-tens');
+const lc='text-xs uppercase tracking-wider font-semibold block ';
+if(ll){ll.textContent=d?'Lecturas de las galgas (dato)':'Lecturas calculadas';ll.className=lc+(d?'text-slate-300':'text-cyan-300');}
+if(lt){lt.textContent=d?'Tensor calculado [µε]':'Tensor de deformación (dato) [µε]';lt.className=lc+(d?'text-cyan-300':'text-slate-300');}
+const h=document.getElementById('m5_mode_hint');
+if(h){h.innerHTML=d?'<strong class="text-indigo-300">Galgas → Tensor.</strong> Das las tres lecturas y la herramienta resuelve el sistema 3×3: ε<sub>x</sub>, ε<sub>y</sub>, γ<sub>xy</sub>, círculo, principales y tensiones.'
+:'<strong class="text-emerald-300">Tensor → Galgas.</strong> Das el estado de deformación y la herramienta calcula qué leería cada galga en su posición aplicando ε<sub>n</sub>(θ).';
+h.className='text-[11px] leading-snug rounded-lg px-3 py-2 border '+(d?'bg-indigo-950/30 border-indigo-800/50 text-slate-300':'bg-emerald-950/25 border-emerald-800/50 text-slate-300');}
+updateModule5();}
+
+/* ---- Motor de reglas: qué atajo de los apuntes se puede aplicar ---- */
+function m5Metodo(th,eps,ex,ey,gxy){
+  const L=['A','B','C'],CO=['#ef4444','#22c55e','#3b82f6'];
+  const N=a=>{let v=a%180;if(v<0)v+=180;return v;};
+  const SD=(a,b)=>{let d=(a-b)%180;if(d>90)d-=180;if(d<=-90)d+=180;return d;};
+  const eq=(v,t)=>Math.abs(v-t)<0.5;
+  const f=v=>{const r=Math.round(v*10)/10;return (Object.is(r,-0)?0:r).toFixed(1);};
+  const sum=v=>(v<0?'− ':'+ ')+f(Math.abs(v));
+  const T=[N(th[0]),N(th[1]),N(th[2])],g=i=>'<b style="color:'+CO[i]+'">'+L[i]+'</b>';
+  const OK='bg-emerald-950 text-emerald-300 border border-emerald-800',
+        NO='bg-slate-800 text-slate-400 border border-slate-700',
+        AV='bg-amber-950 text-amber-300 border border-amber-800',
+        NT='bg-indigo-950 text-indigo-300 border border-indigo-800';
+  const out=[];
+  const paso=(tag,cl,txt,form)=>out.push('<div class="flex gap-2 items-start"><span class="shrink-0 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded '+cl+'">'+tag+'</span><div class="flex-1 min-w-0"><p>'+txt+'</p>'+(form?'<p class="font-mono text-[11px] text-cyan-200 bg-slate-950/70 border border-slate-800 rounded px-2 py-1 mt-1 break-words">'+form+'</p>':'')+'</div></div>');
+  const d01=Math.abs(SD(T[0],T[1])),d12=Math.abs(SD(T[1],T[2])),d02=Math.abs(SD(T[0],T[2]));
+  const isDelta=eq(d01,60)&&eq(d12,60)&&eq(d02,60);
+  let tipo='disposición arbitraria';
+  if(eq(d01,45)&&eq(d12,45))tipo='galgas consecutivas a 45º (tipo rectangular / oblicua)';
+  else if(isDelta)tipo='delta: tres galgas a 60º entre sí';
+  paso('Disposición',NT,'θ = ('+f(th[0])+'º, '+f(th[1])+'º, '+f(th[2])+'º) → <strong>'+tipo+'</strong>. Separaciones: '+f(d01)+'º (A-B), '+f(d12)+'º (B-C), '+f(d02)+'º (A-C).','');
+  /* 1) centro */
+  let Cv=null,perp=null;
+  for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)if(perp===null&&eq(Math.abs(SD(T[i],T[j])),90))perp=[i,j];
+  if(perp){const i=perp[0],j=perp[1];Cv=(eps[i]+eps[j])/2;
+    paso('Regla 1',OK,'Las galgas '+g(i)+' ('+f(th[i])+'º) y '+g(j)+' ('+f(th[j])+'º) son perpendiculares: 90º en la pieza son 180º en el círculo, así que son puntos diametralmente opuestos y su media es el centro.',
+      'C = (ε'+L[i]+' + ε'+L[j]+')/2 = ('+f(eps[i])+' '+sum(eps[j])+')/2 = <span class="text-white">'+f(Cv)+' µε</span>');}
+  else if(isDelta){Cv=(eps[0]+eps[1]+eps[2])/3;
+    paso('Regla 3',OK,'Las tres galgas están a 60º entre sí, o sea a 120º en el círculo: forman un triángulo equilátero inscrito y, por simetría, su media es el centro.',
+      'C = (εA + εB + εC)/3 = ('+f(eps[0])+' '+sum(eps[1])+' '+sum(eps[2])+')/3 = <span class="text-white">'+f(Cv)+' µε</span>');}
+  else paso('Reglas 1 y 3',NO,'No hay ningún par perpendicular ni disposición en delta, así que el centro no sale de un atajo geométrico.','');
+  /* 2) referencia y epsilon_x */
+  let ref=-1,refY=false;
+  for(let i=0;i<3;i++)if(ref<0&&eq(T[i],0))ref=i;
+  if(ref<0)for(let i=0;i<3;i++)if(ref<0&&eq(T[i],90)){ref=i;refY=true;}
+  /* La regla 2 se aplica respecto al eje x (ángulo absoluto de la galga). Sólo si
+     ninguna galga cae sobre x o y se usa la dirección de A como x′ de la roseta. */
+  const girada=(ref<0),base=girada?T[0]:0,sfx=girada?'x′y′':'xy';
+  let exL=null,eyL=null;
+  if(Cv!==null){
+    if(!girada&&!refY){exL=eps[ref];eyL=2*Cv-eps[ref];}
+    else if(!girada){eyL=eps[ref];exL=2*Cv-eps[ref];}
+    else {exL=eps[0];eyL=2*Cv-eps[0];}
+    if(!girada&&!refY)paso('Lectura directa',OK,'La galga '+g(ref)+' está sobre el eje x, así que su lectura <em>es</em> ε<sub>x</sub>; la opuesta del círculo da ε<sub>y</sub>.',
+      'εx = ε'+L[ref]+' = '+f(eps[ref])+' µε&nbsp;&nbsp;→&nbsp;&nbsp;εy = 2C − εx = <span class="text-white">'+f(2*Cv-eps[ref])+' µε</span>');
+    else if(!girada)paso('Lectura directa',OK,'La galga '+g(ref)+' está sobre el eje y.',
+      'εy = ε'+L[ref]+' = '+f(eps[ref])+' µε&nbsp;&nbsp;→&nbsp;&nbsp;εx = 2C − εy = <span class="text-white">'+f(2*Cv-eps[ref])+' µε</span>');
+    else{paso('Roseta girada',AV,'Ninguna galga coincide con x ni con y (A está a '+f(th[0])+'º). Los atajos siguen valiendo, pero dan el estado en los <strong>ejes de la propia roseta</strong> (x′ = dirección de A). Para pasarlo a x, y hay que girar −'+f(th[0])+'º en la pieza, es decir −'+f(2*th[0])+'º en el círculo; o ir directamente al sistema 3×3.','');
+      paso('Lectura directa',OK,'En los ejes de la roseta, la galga '+g(0)+' hace de x′.',
+        'εx′ = εA = '+f(eps[0])+' µε&nbsp;&nbsp;→&nbsp;&nbsp;εy′ = 2C − εx′ = <span class="text-white">'+f(2*Cv-eps[0])+' µε</span>');}
+  }
+  /* 3) distorsion: regla 2 -> delta -> ecuacion de una galga oblicua */
+  if(Cv!==null){
+    let hecho=false,k=-1,sg=1;
+    for(let i=0;i<3;i++){if(i===ref)continue;const sd=SD(T[i],base);if(k<0&&eq(Math.abs(sd),45)){k=i;sg=sd>0?1:-1;}}
+    if(k>=0){const gv=sg*2*(eps[k]-Cv);hecho=true;
+      paso('Regla 2',OK,'La galga '+g(k)+' está a '+(sg>0?'+':'−')+'45º de la dirección de referencia. Girar 45º en la pieza son 90º en el círculo: lo que era altura pasa a anchura, así que su distancia al centro es la altura γ/2 de X.'+(sg<0?' Al estar a −45º, la contribución de γ cambia de signo.':''),
+        'γ'+sfx+' = '+(sg>0?'':'−')+'2(ε'+L[k]+' − C) = '+(sg>0?'':'−')+'2('+f(eps[k])+' '+sum(-Cv)+') = <span class="text-white">'+f(gv)+' µε</span>');}
+    if(!hecho&&isDelta){let p=-1,m=-1;
+      for(let i=0;i<3;i++){const sd=SD(T[i],base);if(eq(sd,60))p=i;if(eq(sd,-60))m=i;}
+      if(p>=0&&m>=0){const gv=2*(eps[p]-eps[m])/Math.sqrt(3);hecho=true;
+        paso('Delta',OK,'Las galgas '+g(p)+' (+60º) y '+g(m)+' (−60º) son simétricas respecto a la dirección de referencia, así que su diferencia aísla la distorsión.',
+          'γ'+sfx+' = 2(ε'+L[p]+' − ε'+L[m]+')/√3 = <span class="text-white">'+f(gv)+' µε</span>');}}
+    if(!hecho&&exL!==null){
+      /* Sin galga a 45º ni par +-60 respecto a la referencia: como C, ex y ey ya se
+         conocen, basta la ecuacion de UNA galga oblicua; no hace falta el 3x3. */
+      let q=-1,best=0;
+      for(let i=0;i<3;i++){const sn=Math.abs(Math.sin(2*T[i]*Math.PI/180));if(sn>best){best=sn;q=i;}}
+      if(q>=0&&best>1e-6){const th2=2*T[q]*Math.PI/180,aa=(exL-eyL)/2;
+        const gv=2*(eps[q]-Cv-aa*Math.cos(th2))/Math.sin(th2);hecho=true;
+        paso('Galga oblicua',AV,'Ninguna galga cae a 45º de la referencia ni forman un par ±60º con ella, así que no hay atajo geométrico puro para la distorsión. Pero con C, ε<sub>x</sub> y ε<sub>y</sub> ya conocidos basta <strong>la ecuación de una sola galga oblicua</strong> —la '+g(q)+', a '+f(th[q])+'º— en lugar del sistema 3×3.',
+          'γ'+sfx+' = 2·[ε'+L[q]+' − C − ((εx−εy)/2)·cos 2θ] / sen 2θ = <span class="text-white">'+f(gv)+' µε</span>');}}
+    if(!hecho)paso('Regla 2',NO,'Ninguna galga oblicua disponible: la distorsión no puede despejarse con un atajo.','');
+  }
+  /* 4) formula cerrada de los apuntes */
+  const ang=T.join(',');
+  if(ang==='0,45,90')paso('Apuntes',NT,'Es la roseta rectangular 0-45-90 de la diapositiva 173.','εx = εA ; εy = εC ; γxy = 2εB − εA − εC = <span class="text-white">'+f(2*eps[1]-eps[0]-eps[2])+' µε</span>');
+  else if(ang==='45,90,135')paso('Apuntes',NT,'Es la roseta oblicua 45-90-135 de la diapositiva 174.','εy = εB ; εx = εA + εC − εB ; γxy = εA − εC = <span class="text-white">'+f(eps[0]-eps[2])+' µε</span>');
+  else if(ang==='0,60,120')paso('Apuntes',NT,'Es la roseta delta 0-60-120 de la diapositiva 174.','C = (εA+εB+εC)/3 ; εx = εA ; γxy = 2(εB − εC)/√3 = <span class="text-white">'+f(2*(eps[1]-eps[2])/Math.sqrt(3))+' µε</span>');
+  /* 5) universal */
+  paso('Universal',NT,'Siempre válido, con cualquier disposición: una ecuación ε<sub>n</sub>(θ) por galga y se resuelve el sistema 3×3 (es lo que hace esta herramienta).',
+    'Resultado en ejes <b>x, y</b>: εx = <span class="text-white">'+f(ex)+'</span> ; εy = <span class="text-white">'+f(ey)+'</span> ; γxy = <span class="text-white">'+f(gxy)+'</span> µε'+
+    (girada?'<br><span class="text-amber-300">En los ejes de la roseta (x′ = A) los atajos daban otros números: son el mismo estado girado '+f(th[0])+'º.</span>':''));
+  if(Cv!==null&&!girada)out.push('<p class="text-[11px] text-emerald-300/90 border-t border-slate-700/60 pt-2 mt-1"><i class="fa-solid fa-circle-check mr-1"></i>Con esta roseta <strong>no hace falta el sistema 3×3</strong>: las reglas geométricas bastan.</p>');
+  else if(Cv!==null)out.push('<p class="text-[11px] text-amber-300/90 border-t border-slate-700/60 pt-2 mt-1"><i class="fa-solid fa-circle-exclamation mr-1"></i>Las reglas dan el estado en los ejes de la roseta; para expresarlo en x, y hay que girar o usar el sistema 3×3.</p>');
+  else out.push('<p class="text-[11px] text-slate-400 border-t border-slate-700/60 pt-2 mt-1"><i class="fa-solid fa-circle-info mr-1"></i>Aquí no hay atajo: toca el método universal.</p>');
+  return out.join('');
+}
+
+function updateModule5(){
+  const thA=num('m5_thA'),thB=num('m5_thB'),thC=num('m5_thC');
+  const EG=num('m5_emod'),nu=num('m5_nu'),R2D=Math.PI/180;
+  const rA=thA*R2D,rB=thB*R2D,rC=thC*R2D;
+  let ex=0,ey=0,gxy=0,sing=false;
+  if(m5Mode==='direct'){
+    const eA=num('m5_eA'),eB=num('m5_eB'),eC=num('m5_eC');
+    const M=[[Math.cos(rA)**2,Math.sin(rA)**2,Math.sin(rA)*Math.cos(rA)],
+             [Math.cos(rB)**2,Math.sin(rB)**2,Math.sin(rB)*Math.cos(rB)],
+             [Math.cos(rC)**2,Math.sin(rC)**2,Math.sin(rC)*Math.cos(rC)]];
+    const d3=m=>m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1])-m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0])+m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0]);
+    const D=d3(M);
+    if(Math.abs(D)>1e-6){
+      const Mx=[[eA,M[0][1],M[0][2]],[eB,M[1][1],M[1][2]],[eC,M[2][1],M[2][2]]];
+      const My=[[M[0][0],eA,M[0][2]],[M[1][0],eB,M[1][2]],[M[2][0],eC,M[2][2]]];
+      const Mg=[[M[0][0],M[0][1],eA],[M[1][0],M[1][1],eB],[M[2][0],M[2][1],eC]];
+      ex=d3(Mx)/D;ey=d3(My)/D;gxy=d3(Mg)/D;
+    }else sing=true;
+    m5Set('m5_tex',ex);m5Set('m5_tey',ey);m5Set('m5_tgxy',gxy);
+  }else{
+    ex=num('m5_tex');ey=num('m5_tey');gxy=num('m5_tgxy');
+    const fn=t=>(ex+ey)/2+((ex-ey)/2)*Math.cos(2*t)+(gxy/2)*Math.sin(2*t);
+    m5Set('m5_eA',fn(rA));m5Set('m5_eB',fn(rB));m5Set('m5_eC',fn(rC));
+  }
+  const w=document.getElementById('m5_sing_warn');if(w)w.classList.toggle('hidden',!sing);
+  const eA=num('m5_eA'),eB=num('m5_eB'),eC=num('m5_eC');
+  const cE=(ex+ey)/2,rE=Math.sqrt(((ex-ey)/2)**2+(gxy/2)**2),e1=cE+rE,e2=cE-rE,gM=2*rE;
+  const tP=0.5*Math.atan2(gxy,ex-ey)/R2D;
+  const ez=-nu*(ex+ey)/(1-nu);
+  const gAbs=Math.max(Math.abs(e1-e2),Math.abs(e1-ez),Math.abs(e2-ez));
+  const EM=EG*1000,k=EM/(1-nu*nu);
+  const s1=k*(e1+nu*e2)*1e-6,s2=k*(e2+nu*e1)*1e-6;
+  const tauAbs=Math.max(Math.abs(s1-s2),Math.abs(s1),Math.abs(s2))/2;
+  const svm=Math.sqrt(s1*s1-s1*s2+s2*s2);
+  const f1=v=>{const r=Math.round(v*10)/10;return (Object.is(r,-0)?0:r).toFixed(1);};
+  const P=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  P('m5_ex',f1(ex)+' µε');P('m5_ey',f1(ey)+' µε');P('m5_gxy',f1(gxy)+' µε');P('m5_exy',f1(gxy/2)+' µε');
+  P('m5_C',f1(cE)+' µε');P('m5_R',f1(rE)+' µε');P('m5_gmax',f1(gM)+' µε');P('m5_tp',f1(tP)+'º');
+  P('m5_e1',f1(e1)+' µε');P('m5_e2',f1(e2)+' µε');P('m5_e3',f1(ez)+' µε');P('m5_gmaxabs',f1(gAbs)+' µε');
+  P('m5_sig1',f1(s1)+' MPa');P('m5_sig2',f1(s2)+' MPa');P('m5_taumax',f1(tauAbs)+' MPa');P('m5_svm',f1(svm)+' MPa');
+
+  const met=document.getElementById('m5-metodo');
+  if(met)met.innerHTML=m5Metodo([thA,thB,thC],[eA,eB,eC],ex,ey,gxy);
+  const sis=document.getElementById('m5-sistema');
+  if(sis){const a=(ex-ey)/2,b=gxy/2,L=['A','B','C'],TH=[thA,thB,thC],EE=[eA,eB,eC],CO=['#ef4444','#22c55e','#3b82f6'];
+    sis.innerHTML=TH.map((t,i)=>'<div class="bg-slate-950/70 border border-slate-800 rounded px-2 py-1"><span style="color:'+CO[i]+'">ε'+L[i]+'</span> (θ='+f1(t)+'º) = '+f1(cE)+' + '+f1(a)+'·cos '+f1(2*t)+'º + '+f1(b)+'·sen '+f1(2*t)+'º = <span class="text-white">'+f1(EE[i])+'</span> µε</div>').join('');}
+
+  /* ---------- Esquema en la pieza ---------- */
+  const TH=[rA,rB,rC],LB=['A','B','C'],CO=['#ef4444','#22c55e','#3b82f6'],EE=[eA,eB,eC];
+  const sT=[];
+  const cir=(r,n)=>{const x=[],y=[];for(let i=0;i<=n;i++){const t=i/n*2*Math.PI;x.push(r*Math.cos(t));y.push(r*Math.sin(t));}return{x,y};};
+  const cc=cir(1,120);
+  sT.push({x:cc.x,y:cc.y,mode:'lines',line:{color:'#1e293b',width:1},hoverinfo:'skip',showlegend:false});
+  sT.push({x:[-1.15,1.15],y:[0,0],mode:'lines',line:{color:'#475569',width:1,dash:'dot'},hoverinfo:'skip',showlegend:false});
+  sT.push({x:[0,0],y:[-1.15,1.15],mode:'lines',line:{color:'#475569',width:1,dash:'dot'},hoverinfo:'skip',showlegend:false});
+  sT.push({x:[1.34,-0.12],y:[-0.12,1.34],mode:'text',text:['x','y'],textfont:{color:'#94a3b8',size:12,family:'monospace'},hoverinfo:'skip',showlegend:false});
+  TH.forEach((t,i)=>{const cx=Math.cos(t),cy=Math.sin(t);
+    sT.push({x:[-cx,cx],y:[-cy,cy],mode:'lines',line:{color:CO[i],width:4},name:LB[i]+'  '+f1(TH[i]/R2D)+'º · '+f1(EE[i])+' µε'});
+    sT.push({x:[cx*1.16],y:[cy*1.16],mode:'text',text:['<b>'+LB[i]+'</b><br>'+f1(EE[i])],textfont:{color:CO[i],size:10,family:'monospace'},hoverinfo:'skip',showlegend:false});});
+  const p1=tP*R2D;
+  sT.push({x:[-Math.cos(p1)*1.05,Math.cos(p1)*1.05],y:[-Math.sin(p1)*1.05,Math.sin(p1)*1.05],mode:'lines',line:{color:'#f472b6',width:2,dash:'dash'},name:'Dir. 1  '+f1(tP)+'º'});
+  sT.push({x:[-Math.cos(p1+Math.PI/2)*1.05,Math.cos(p1+Math.PI/2)*1.05],y:[-Math.sin(p1+Math.PI/2)*1.05,Math.sin(p1+Math.PI/2)*1.05],mode:'lines',line:{color:'#c084fc',width:2,dash:'dash'},name:'Dir. 2'});
+  const aN=30,ax=[0],ay=[0];for(let i=0;i<=aN;i++){const t=p1*i/aN;ax.push(0.32*Math.cos(t));ay.push(0.32*Math.sin(t));}ax.push(0);ay.push(0);
+  sT.push({x:ax,y:ay,mode:'lines',line:{color:'#f472b6',width:1.5},hoverinfo:'skip',showlegend:false});
+  sT.push({x:[0.42*Math.cos(p1/2)],y:[0.42*Math.sin(p1/2)],mode:'text',text:['θp='+f1(tP)+'º'],textfont:{color:'#f9a8d4',size:10,family:'monospace'},hoverinfo:'skip',showlegend:false});
+  const sL={margin:{l:20,r:20,b:20,t:20},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',
+    xaxis:{range:[-1.45,1.45],color:'#94a3b8',gridcolor:'#1e293b',zeroline:false,showticklabels:false},
+    yaxis:{range:[-1.45,1.45],color:'#94a3b8',gridcolor:'#1e293b',zeroline:false,showticklabels:false,scaleanchor:'x',scaleratio:1},
+    showlegend:true,legend:{font:{color:'#cbd5e1',size:8},x:0,xanchor:'left',y:1,yanchor:'top',bgcolor:'rgba(15,23,42,0.85)',bordercolor:'#334155',borderwidth:1}};
+  plotKeepView('plot-mod5-schema',sT,sL,{responsive:true,displayModeBar:false});
+
+  /* ---------- Círculo de Mohr ---------- */
+  const shG=chk('m5_show_gauges'),shP=chk('m5_show_princ'),shM=chk('m5_show_gmax'),shA=chk('m5_show_arcs');
+  const mT=[];
+  const cX=[],cY=[];for(let a=0;a<=360;a+=2){const t=a*R2D;cX.push(cE+rE*Math.cos(t));cY.push(rE*Math.sin(t));}
+  mT.push({x:cX,y:cY,mode:'lines',line:{color:'#34d399',width:2.5},name:'Círculo (C='+f1(cE)+', R='+f1(rE)+')',hoverinfo:'skip'});
+  mT.push({x:[cE],y:[0],mode:'markers',marker:{color:'#94a3b8',size:7,symbol:'x'},name:'Centro C = '+f1(cE)});
+  const phiX=Math.atan2(-gxy/2,ex-cE);
+  mT.push({x:[ex,ey],y:[-gxy/2,gxy/2],mode:'lines+markers+text',text:['X (x)','Y (y)'],
+    textposition:[(-gxy/2)>=0?'top right':'bottom right',(gxy/2)>=0?'top left':'bottom left'],
+    textfont:{color:'#f59e0b',size:11,family:'monospace'},marker:{color:'#f59e0b',size:9,line:{color:'#fff',width:1}},
+    line:{color:'#f59e0b',width:1.5,dash:'dot'},name:'Diámetro X–Y'});
+  if(shP)mT.push({x:[e2,e1],y:[0,0],mode:'markers+text',text:['ε₂='+f1(e2),'ε₁='+f1(e1)],
+    textposition:['bottom center','top center'],textfont:{color:'#f472b6',size:10,family:'monospace'},
+    marker:{color:'#f472b6',size:12,symbol:'diamond',line:{color:'#fff',width:1.5}},name:'Deformaciones principales'});
+  if(shM)mT.push({x:[cE,cE],y:[rE,-rE],mode:'markers+text',text:['γmáx/2',''],
+    textposition:['middle right','middle right'],textfont:{color:'#c084fc',size:9,family:'monospace'},
+    marker:{color:'#c084fc',size:10,symbol:'square',line:{color:'#fff',width:1}},name:'γmáx/2 = R = '+f1(rE)});
+  if(shG){const gx=[],gy=[],gt=[],gc=[],gp=[],dx=[],dy=[];
+    TH.forEach((t,i)=>{const ph=phiX+2*t,px=cE+rE*Math.cos(ph),py=rE*Math.sin(ph);
+      gx.push(px);gy.push(py);gt.push(LB[i]);gc.push(CO[i]);gp.push(py>=0?'top center':'bottom center');
+      dx.push(px,px,null);dy.push(py,0,null);
+      mT.push({x:[cE,px],y:[0,py],mode:'lines',line:{color:CO[i],width:1.2},hoverinfo:'skip',showlegend:false});});
+    mT.push({x:dx,y:dy,mode:'lines',line:{color:'#64748b',width:1,dash:'dot'},hoverinfo:'skip',showlegend:false});
+    mT.push({x:gx,y:gy,mode:'markers+text',text:gt,textposition:gp,
+      textfont:{color:'#e2e8f0',size:12,family:'monospace'},marker:{color:gc,size:11,line:{color:'#fff',width:1.5}},
+      name:'Galgas (a 2θ de X)',hovertemplate:'%{text}: ε = %{x:.1f} µε<br>γ/2 = %{y:.1f} µε<extra></extra>'});
+    mT.push({x:gx,y:[0,0,0],mode:'markers',marker:{color:gc,size:7,symbol:'triangle-up'},
+      name:'Lectura = abscisa',hovertemplate:'ε = %{x:.1f} µε<extra></extra>'});}
+  if(shA){TH.forEach((t,i)=>{if(Math.abs(t)<1e-6)return;
+      const rr=rE*(0.30+0.13*i),n=48,ax2=[],ay2=[];
+      for(let q=0;q<=n;q++){const a=phiX+2*t*q/n;ax2.push(cE+rr*Math.cos(a));ay2.push(rr*Math.sin(a));}
+      mT.push({x:ax2,y:ay2,mode:'lines',line:{color:CO[i],width:1.2,dash:'dash'},hoverinfo:'skip',showlegend:false});
+      const am=phiX+t;
+      mT.push({x:[cE+rr*1.22*Math.cos(am)],y:[rr*1.22*Math.sin(am)],mode:'text',
+        text:['2θ'+LB[i]],textfont:{color:CO[i],size:9,family:'monospace'},hoverinfo:'skip',showlegend:false});});}
+  const mL={margin:{l:58,r:22,b:104,t:26},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',hovermode:'closest',
+    xaxis:{title:{text:'ε [µε]  (lectura de la galga)',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',zerolinecolor:'#475569'},
+    yaxis:{title:{text:'γ/2 [µε]',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',zerolinecolor:'#475569',scaleanchor:'x',scaleratio:1},
+    showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',x:0.5,xanchor:'center',y:-0.3,yanchor:'top',bgcolor:'rgba(0,0,0,0)'}};
+  plotKeepView('plot-mod5-mohr',mT,mL,{responsive:true,displayModeBar:false});
+}
+
+let m6Mode='check',m6Geo='cyl';
+
+/* ---------- Núcleo de cálculo ---------- */
+function m6Sig(geo,p,r,e,inner){
+  return {sc:(geo==='cyl'?p*r/e:p*r/(2*e)), sa:p*r/(2*e), s3:(inner?-p:0)};
+}
+function m6Eq(sc,sa,s3,crit){
+  const a=[sc,sa,s3].sort((x,y)=>y-x);
+  if(crit==='vm')return Math.sqrt(0.5*(Math.pow(sc-sa,2)+Math.pow(sa-s3,2)+Math.pow(s3-sc,2)));
+  if(crit==='tresca')return a[0]-a[2];
+  return Math.max(Math.abs(a[0]),Math.abs(a[2]));
+}
+function m6EqOf(geo,p,r,e,inner,crit){const s=m6Sig(geo,p,r,e,inner);return m6Eq(s.sc,s.sa,s.s3,crit);}
+function m6Bisect(f,target,lo,hi){
+  let a=lo,b=hi,fa=f(a)-target,fb=f(b)-target;
+  if(!isFinite(fa)||!isFinite(fb)||fa*fb>0)return NaN;
+  for(let i=0;i<160;i++){const m=0.5*(a+b),fm=f(m)-target;if(fa*fm<=0){b=m;fb=fm;}else{a=m;fa=fm;}}
+  return 0.5*(a+b);
+}
+function m6Emin(geo,p,r,inner,crit,sadm){
+  if(!(p>0&&r>0&&sadm>0))return NaN;
+  return m6Bisect(e=>m6EqOf(geo,p,r,e,inner,crit),sadm,r*1e-6,r*20);
+}
+function m6Pmax(geo,r,e,inner,crit,sadm){
+  if(!(r>0&&e>0&&sadm>0))return NaN;
+  return m6Bisect(pp=>m6EqOf(geo,pp,r,e,inner,crit),sadm,1e-9,1e7);
+}
+function m6EpsPerP(geo,r,e,E,nu,beta,inner){
+  const s=m6Sig(geo,1,r,e,inner);
+  const ec=(s.sc-nu*(s.sa+s.s3))/E, ea=(s.sa-nu*(s.sc+s.s3))/E;
+  const b=beta*Math.PI/180;
+  return ea*Math.pow(Math.cos(b),2)+ec*Math.pow(Math.sin(b),2);
+}
+function m6Vol(geo,r,hrel){return geo==='sph'?(4/3)*Math.PI*Math.pow(r,3):Math.PI*Math.pow(r,3)*hrel;}
+function m6RfromV(geo,V,hrel){return geo==='sph'?Math.cbrt(3*V/(4*Math.PI)):Math.cbrt(V/(Math.PI*hrel));}
+
+/* ---------- Conmutadores ---------- */
+const M6_BTN='text-xs px-3 py-1.5 rounded-md font-medium transition ';
+const M6_ON='bg-indigo-600 text-white shadow',M6_OFF='text-slate-300 hover:bg-slate-700/60';
+const M6_HINT={
+ check:'<strong class="text-indigo-300">Comprobar.</strong> Das p, r y e y sale el estado tensional completo del punto, los tres criterios y el veredicto.',
+ design:'<strong class="text-emerald-300">Dimensionar.</strong> Das p y r y sale el <strong>espesor mínimo</strong> con el criterio elegido. El campo e pasa a ser resultado.',
+ pmax:'<strong class="text-amber-300">Presión admisible.</strong> Das r y e y sale la <strong>presión máxima</strong> que admite el depósito con el criterio elegido.',
+ gauge:'<strong class="text-cyan-300">Desde galga.</strong> Das la lectura de una galga pegada en la pared y sale la <strong>presión</strong> que la produce, y con ella todo lo demás.'};
+function setM6Mode(m){m6Mode=m;
+ ['check','design','pmax','gauge'].forEach(k=>{const b=document.getElementById('m6_btn_'+k);if(b)b.className=M6_BTN+(k===m?M6_ON:M6_OFF);});
+ const h=document.getElementById('m6_mode_hint');
+ if(h){h.innerHTML=M6_HINT[m];h.className='text-[11px] leading-snug rounded-lg px-3 py-2 border bg-slate-900/60 border-slate-700 text-slate-300';}
+ const cg=document.getElementById('m6_card_gauge');if(cg)cg.classList.toggle('hidden',m!=='gauge');
+ updateModule6();}
+function setM6Geo(g){m6Geo=g;
+ ['cyl','sph'].forEach(k=>{const b=document.getElementById('m6_btn_'+k);
+   if(b)b.className='flex-1 text-xs px-2 py-1.5 rounded-md font-medium transition '+(k===g?M6_ON:M6_OFF);});
+ updateModule6();}
+function onM6Mat(manual){const s=document.getElementById('m6_mat');
+ if(!manual&&s.value!=='custom')document.getElementById('m6_sy').value=s.value;
+ else if(manual)s.value='custom';
+ updateModule6();}
+
+/* ---------- Módulo ---------- */
+function initM6(){
+ ['check','design','pmax','gauge'].forEach(k=>{const b=document.getElementById('m6_btn_'+k);if(b)b.className=M6_BTN+(k===m6Mode?M6_ON:M6_OFF);});
+ ['cyl','sph'].forEach(k=>{const b=document.getElementById('m6_btn_'+k);if(b)b.className='flex-1 text-xs px-2 py-1.5 rounded-md font-medium transition '+(k===m6Geo?M6_ON:M6_OFF);});
+ const h=document.getElementById('m6_mode_hint');
+ if(h){h.innerHTML=M6_HINT[m6Mode];h.className='text-[11px] leading-snug rounded-lg px-3 py-2 border bg-slate-900/60 border-slate-700 text-slate-300';}
+ const cg=document.getElementById('m6_card_gauge');if(cg)cg.classList.add('hidden');}
+
+function updateModule6(){
+  const f1=v=>{if(!isFinite(v))return '—';const r=Math.round(v*10)/10;return (Object.is(r,-0)?0:r).toFixed(1);};
+  const f2=v=>{if(!isFinite(v))return '—';const r=Math.round(v*100)/100;return (Object.is(r,-0)?0:r).toFixed(2);};
+  const P=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  const SV=(id,v)=>{const e=document.getElementById(id);if(e&&document.activeElement!==e){const r=Math.round(v*1000)/1000;if(parseFloat(e.value)!==r)e.value=r;}};
+  const RO=(id,ro)=>{const e=document.getElementById(id);if(!e)return;e.readOnly=ro;
+    e.className=ro?'w-full bg-slate-950/70 border border-slate-800 rounded px-2 py-1.5 text-cyan-300 font-bold'
+                  :'w-full bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-white';};
+  const geo=m6Geo,isCyl=(geo==='cyl');
+  const crit=(document.querySelector('input[name="m6_crit"]:checked')||{value:'vm'}).value;
+  const inner=(document.querySelector('input[name="m6_face"]:checked')||{value:'out'}).value==='in';
+
+  /* -- geometría -- */
+  const rmode=document.getElementById('m6_rmode').value;
+  const hrel=parseFloat(document.getElementById('m6_hrel').value)||2;
+  ['r','d','V'].forEach(k=>{const w=document.getElementById('m6_wrap_'+k);if(w)w.classList.toggle('hidden',rmode!==k);});
+  const wh=document.getElementById('m6_wrap_h');if(wh)wh.classList.toggle('hidden',!(rmode==='V'&&isCyl));
+  let r;
+  if(rmode==='r')r=num('m6_r');
+  else if(rmode==='d')r=num('m6_d')/2;
+  else r=m6RfromV(geo,Math.max(num('m6_V'),1e-9)*1e9,hrel);
+  if(!(r>0))r=1;
+  const V=m6Vol(geo,r,hrel)/1e9;
+  P('m6_geo_info','r = '+f1(r)+' mm · Ø = '+f1(2*r)+' mm · V = '+f2(V)+' m³'+(isCyl?' · h = '+f1(hrel*r)+' mm':''));
+
+  /* -- admisible -- */
+  const admMode=document.getElementById('m6_admmode').value;
+  document.getElementById('m6_wrap_fs').classList.toggle('hidden',admMode!=='fs');
+  document.getElementById('m6_wrap_dir').classList.toggle('hidden',admMode!=='dir');
+  const sadm = admMode==='dir' ? num('m6_sadm') : num('m6_sy')/Math.max(num('m6_fs'),1e-6);
+
+  /* -- p y e según el modo -- */
+  let p=num('m6_p'), e=Math.max(num('m6_e'),1e-9), gaugeEps=NaN;
+  RO('m6_p', m6Mode==='pmax'||m6Mode==='gauge');
+  RO('m6_e', m6Mode==='design');
+  if(m6Mode==='design'){e=m6Emin(geo,p,r,inner,crit,sadm);SV('m6_e',e);}
+  else if(m6Mode==='pmax'){p=m6Pmax(geo,r,e,inner,crit,sadm);SV('m6_p',p);}
+  else if(m6Mode==='gauge'){
+    const gm=document.getElementById('m6_gmode').value;
+    document.getElementById('m6_wrap_dl').classList.toggle('hidden',gm!=='dl');
+    document.getElementById('m6_wrap_eps').classList.toggle('hidden',gm!=='eps');
+    document.getElementById('m6_wrap_beta').classList.toggle('hidden',!isCyl);
+    gaugeEps = gm==='dl' ? (num('m6_dL')/Math.max(num('m6_L0'),1e-9))*1e6 : num('m6_eps');
+    const E=num('m6_E')*1000, nu=num('m6_nu'), beta=isCyl?num('m6_beta'):90;
+    const K=m6EpsPerP(geo,r,e,E,nu,beta,inner);
+    p = Math.abs(K)>1e-15 ? (gaugeEps*1e-6)/K : NaN;
+    SV('m6_p',p);
+    P('m6_gauge_note', 'ε = '+f1(gaugeEps)+' µε'+(isCyl?' (galga a '+f1(beta)+'º del eje)':' · en la esfera la orientación es indiferente: σ₁ = σ₂'));
+  }
+  if(!isFinite(p))p=0; if(!isFinite(e)||e<=0)e=1e-9;
+
+  /* -- estado tensional -- */
+  const s=m6Sig(geo,p,r,e,inner), sc=s.sc, sa=s.sa, s3=s.s3;
+  const ord=[sc,sa,s3].sort((x,y)=>y-x);
+  const tPl=Math.abs(sc-sa)/2, tAbs=(ord[0]-ord[2])/2;
+  const seq=m6Eq(sc,sa,s3,crit);
+  P('m6_lbl1',isCyl?'σcirc (σ₁):':'σ₁ = σ₂:');P('m6_lbl2',isCyl?'σaxial (σ₂):':'σ₂:');
+  P('m6_s1',f1(sc)+' MPa');P('m6_s2',f1(sa)+' MPa');P('m6_s3',f1(s3)+' MPa');
+  P('m6_per','p='+f2(p)+' · e='+f1(e)+' · r='+f1(r));
+  P('m6_tpl',f1(tPl)+' MPa');P('m6_tabs',f1(tAbs)+' MPa');
+  P('m6_tplane', tPl>tAbs-1e-9&&tPl>1e-9 ? 'a 45º en el plano de la pared' : 'a 45º atravesando el espesor');
+  P('m6_seq',f1(seq)+' MPa');P('m6_sadm_out',f1(sadm)+' MPa');
+  const util=sadm>0?100*seq/sadm:NaN;
+  P('m6_util',f1(util)+' %');
+  const TOL=1+1e-6;
+  const ok=seq<=sadm*TOL;
+  const st=document.getElementById('m6_status');
+  if(st){st.textContent=ok?'SEGURO':'FALLO';st.className=ok?'text-emerald-400 font-bold':'text-rose-400 font-bold';}
+  const ratio=r/e,thin=ratio>10;
+  const re=document.getElementById('m6_re');
+  if(re){re.textContent='r/e = '+f1(ratio)+(thin?' ✓':' ⚠ pared gruesa');
+    re.className='text-[10px] px-2 py-0.5 rounded '+(thin?'bg-emerald-950 text-emerald-300 border border-emerald-800':'bg-amber-950 text-amber-300 border border-amber-800');}
+
+  /* -- tabla de criterios -- */
+  const CR=[['vm','von Mises'],['tresca','Tresca (σ₁−σ₃)'],['smax','Tensión normal máx.']];
+  const eVM=m6Emin(geo,p,r,inner,'vm',sadm);
+  const tb=document.getElementById('m6_tabla_crit');
+  if(tb)tb.innerHTML=CR.map(c=>{
+    const sq=m6Eq(sc,sa,s3,c[0]), em=m6Emin(geo,p,r,inner,c[0],sadm), rel=em/eVM;
+    const good=sq<=sadm*TOL, sel=(c[0]===crit);
+    return '<tr class="'+(sel?'bg-indigo-950/40 ':'')+'border-b border-slate-800/80">'+
+      '<td class="py-1.5 '+(sel?'text-indigo-200 font-bold':'text-slate-300')+'">'+(sel?'▸ ':'')+c[1]+'</td>'+
+      '<td class="text-right text-white">'+f1(sq)+'</td>'+
+      '<td class="text-right text-amber-300">'+f1(em)+'</td>'+
+      '<td class="text-right text-slate-400">'+(isFinite(rel)?f2(rel):'—')+'</td>'+
+      '<td class="text-right '+(good?'text-emerald-400':'text-rose-400')+'">'+(good?'ok':'excede')+'</td></tr>';}).join('');
+
+  /* -- cordón (solo cilindro) -- */
+  const cw=document.getElementById('m6_card_weld'),cn=document.getElementById('m6_card_noweld');
+  if(cw)cw.classList.toggle('hidden',!isCyl);
+  if(cn)cn.classList.toggle('hidden',isCyl);
+  const alpha=num('m6_alpha'),aR=alpha*Math.PI/180;
+  const wSn=sc*Math.pow(Math.cos(aR),2)+sa*Math.pow(Math.sin(aR),2);
+  const wTa=(sc-sa)*Math.sin(aR)*Math.cos(aR);
+  if(isCyl){
+    P('m6_weld_sn',f1(wSn)+' MPa');P('m6_weld_tau',f1(wTa)+' MPa');P('m6_weld_taumax',f1((sc-sa)/2)+' MPa');
+    const tp=document.getElementById('m6_weld_tipo');
+    if(tp){let t,c;
+      if(alpha<0.5){t='<strong>Cordón longitudinal</strong> — corre paralelo al eje. Su normal es la circunferencial, así que aguanta la tensión mayor (σcirc) y no tiene cortante. Es el peor colocado: es por donde revienta la salchicha.';c='bg-rose-950/30 border-rose-900/50 text-slate-300';}
+      else if(alpha>89.5){t='<strong>Cordón circunferencial</strong> — anillo perpendicular al eje. Solo ve la tensión axial, la mitad que la circunferencial, y tampoco tiene cortante. Es el mejor colocado.';c='bg-emerald-950/25 border-emerald-800/50 text-slate-300';}
+      else{t='<strong>Cordón helicoidal</strong> a '+f1(alpha)+'º del eje. Ve σn y τ a la vez; la τ es máxima justo a 45º.';c='bg-amber-950/25 border-amber-800/50 text-slate-300';}
+      tp.innerHTML=t;tp.className='text-xs rounded-lg px-3 py-2 border leading-relaxed '+c;}
+    const xa=[],ysn=[],yta=[];
+    for(let A=0;A<=90;A+=1){const q=A*Math.PI/180;xa.push(A);
+      ysn.push(sc*Math.pow(Math.cos(q),2)+sa*Math.pow(Math.sin(q),2));
+      yta.push((sc-sa)*Math.sin(q)*Math.cos(q));}
+    const wT=[
+      {x:xa,y:ysn,mode:'lines',name:'σn(α)',line:{color:'#38bdf8',width:2.5}},
+      {x:xa,y:yta,mode:'lines',name:'τ(α)',line:{color:'#f59e0b',width:2.5}},
+      {x:[alpha],y:[wSn],mode:'markers',marker:{color:'#38bdf8',size:11,line:{color:'#fff',width:1.5}},name:'σn = '+f1(wSn)},
+      {x:[alpha],y:[wTa],mode:'markers',marker:{color:'#f59e0b',size:11,line:{color:'#fff',width:1.5}},name:'τ = '+f1(wTa)},
+      {x:[45,45],y:[0,(sc-sa)/2],mode:'lines',line:{color:'#475569',width:1,dash:'dot'},hoverinfo:'skip',showlegend:false}];
+    const wL={margin:{l:52,r:14,b:70,t:16},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',hovermode:'x unified',
+      xaxis:{title:{text:'α [º] desde el eje axial   (0 = longitudinal · 90 = circunferencial)',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',dtick:15},
+      yaxis:{title:{text:'[MPa]',font:{color:'#94a3b8',size:10}},color:'#94a3b8',gridcolor:'#334155',zerolinecolor:'#475569'},
+      showlegend:true,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',x:0.5,xanchor:'center',y:-0.22,yanchor:'top',bgcolor:'rgba(0,0,0,0)'}};
+    plotKeepView('plot-mod6-weld',wT,wL,{responsive:true,displayModeBar:false});
+  }
+
+  /* -- tornillos -- */
+  const bd=num('m6_bd'),bsa=num('m6_bsadm');
+  const F=p*Math.PI*r*r, Ab=Math.PI*bd*bd/4, Fb=Ab*bsa;
+  const nb=(Fb>0&&isFinite(F))?Math.ceil(F/Fb):NaN;
+  const fF=v=>Math.abs(v)>=1e6?(v/1e6).toFixed(2)+' MN':(v/1000).toFixed(1)+' kN';
+  P('m6_bF',fF(F));P('m6_bFb',fF(Fb));
+  P('m6_bn',isFinite(nb)?nb:'—');
+  P('m6_bolt_tag',isCyl?'brida circunferencial del cilindro':'unión ecuatorial de los dos casquetes');
+  P('m6_bolt_note','F = p·π·r² = '+fF(F)+' es la fuerza que tiende a separar las dos mitades (presión sobre el área proyectada). Cada tornillo de Ø'+f1(bd)+' mm aporta A·σadm = '+fF(Fb)+'. '+(isCyl?'En el cilindro esta unión trabaja con la tensión axial; una junta longitudinal trabajaría con la circunferencial, el doble.':'En la esfera cualquier plano diametral da la misma fuerza.'));
+
+  /* -- Mohr del punto -- */
+  renderMohrPanel('plot-mod6-mohr',{xx:sc,yy:sa,zz:s3,xy:0,yz:0,zx:0},
+    {mode:'triax',showXYZ:true,showPrinc:true,showN:isCyl,
+     n:{x:Math.cos(aR),y:Math.sin(aR),z:0},nLabel:'cordón',
+     faceLabels:isCyl?['circ','axial','radial']:['σ₁','σ₂','radial'],
+     xlab:'σ [MPa]',ylab:'τ [MPa]',dec:1,unit:'MPa',tag:'σ'});
+
+  /* -- esquema del elemento de pared -- */
+  P('m6_esq_tag',isCyl?'desarrollo: → circunferencial · ↑ axial':'plano tangente a la pared');
+  const eT=[];
+  const sq=1;
+  eT.push({x:[-sq,sq,sq,-sq,-sq],y:[-sq,-sq,sq,sq,-sq],mode:'lines',line:{color:'#64748b',width:2},
+    fill:'toself',fillcolor:'rgba(30,41,59,0.55)',hoverinfo:'skip',showlegend:false});
+  const arr=(x0,y0,dx,dy,col,lab)=>{eT.push({x:[x0,x0+dx],y:[y0,y0+dy],mode:'lines',line:{color:col,width:3},hoverinfo:'skip',showlegend:false});
+    eT.push({x:[x0+dx],y:[y0+dy],mode:'markers',marker:{color:col,size:10,symbol:'triangle-up',angle:Math.atan2(dx,dy)*180/Math.PI},hoverinfo:'skip',showlegend:false});
+    if(lab)eT.push({x:[x0+dx*1.5],y:[y0+dy*1.5],mode:'text',text:[lab],textfont:{color:col,size:11,family:'monospace'},hoverinfo:'skip',showlegend:false});};
+  const LC=0.45;
+  [-0.55,0,0.55].forEach(yy=>{arr(sq,yy,LC,0,'#ef4444','');arr(-sq,yy,-LC,0,'#ef4444','');});
+  [-0.55,0,0.55].forEach(xx=>{arr(xx,sq,0,LC,'#22c55e','');arr(xx,-sq,0,-LC,'#22c55e','');});
+  eT.push({x:[sq+LC*1.9],y:[0.28],mode:'text',text:[(isCyl?'σcirc = ':'σ₁ = ')+f1(sc)],textfont:{color:'#ef4444',size:11,family:'monospace'},hoverinfo:'skip',showlegend:false});
+  eT.push({x:[0],y:[sq+LC*1.5],mode:'text',text:[(isCyl?'σaxial = ':'σ₂ = ')+f1(sa)],textfont:{color:'#22c55e',size:11,family:'monospace'},hoverinfo:'skip',showlegend:false});
+  if(isCyl){
+    const wd=[Math.sin(aR),Math.cos(aR)],K=1.45;
+    eT.push({x:[-wd[0]*K,wd[0]*K],y:[-wd[1]*K,wd[1]*K],mode:'lines',line:{color:'#f59e0b',width:5},name:'cordón ('+f1(alpha)+'º)'});
+    const nn=[Math.cos(aR),-Math.sin(aR)];
+    eT.push({x:[0,nn[0]*0.6],y:[0,nn[1]*0.6],mode:'lines+markers',line:{color:'#c084fc',width:2,dash:'dot'},marker:{size:5,color:'#c084fc'},name:'normal al cordón'});
+    eT.push({x:[0,0],y:[-K,K],mode:'lines',line:{color:'#f43f5e',width:2,dash:'dash'},name:'grieta longitudinal (⊥ σcirc)'});
+  }else{
+    eT.push({x:[0],y:[0],mode:'text',text:['σ₁ = σ₂<br>cualquier dirección<br>ve lo mismo'],textfont:{color:'#94a3b8',size:10,family:'monospace'},hoverinfo:'skip',showlegend:false});
+  }
+  const eL={margin:{l:14,r:14,b:(isCyl?56:18),t:18},paper_bgcolor:'transparent',plot_bgcolor:'#0f172a',
+    xaxis:{range:[-3,3],color:'#94a3b8',gridcolor:'#1e293b',zeroline:false,showticklabels:false},
+    yaxis:{range:[-2,2],color:'#94a3b8',gridcolor:'#1e293b',zeroline:false,showticklabels:false,scaleanchor:'x',scaleratio:1},
+    showlegend:isCyl,legend:{font:{color:'#cbd5e1',size:9},orientation:'h',x:0.5,xanchor:'center',y:-0.02,yanchor:'top',bgcolor:'rgba(0,0,0,0)'}};
+  plotKeepView('plot-mod6-esq',eT,eL,{responsive:true,displayModeBar:false});
+
+  /* -- comparación cilindro / esfera -- */
+  const oth=isCyl?'sph':'cyl';
+  const sThis=m6Sig(geo,p,r,e,inner), sOth=m6Sig(oth,p,r,e,inner);
+  const eqThis=m6Eq(sThis.sc,sThis.sa,sThis.s3,crit), eqOth=m6Eq(sOth.sc,sOth.sa,sOth.s3,crit);
+  const emThis=m6Emin(geo,p,r,inner,crit,sadm), emOth=m6Emin(oth,p,r,inner,crit,sadm);
+  const Vmm=m6Vol(geo,r,hrel);
+  const rCylV=m6RfromV('cyl',Vmm,hrel), rSphV=m6RfromV('sph',Vmm,hrel);
+  const emCylV=m6Emin('cyl',p,rCylV,inner,crit,sadm), emSphV=m6Emin('sph',p,rSphV,inner,crit,sadm);
+  const cy=v=>isCyl?v[0]:v[1], sp=v=>isCyl?v[1]:v[0];
+  const rows=[
+    ['σeq con el mismo r y e',[eqThis,eqOth],'MPa'],
+    ['e mínimo con el mismo r',[emThis,emOth],'mm'],
+    ['radio a igual volumen ('+f2(Vmm/1e9)+' m³)',[rCylV,rSphV],'mm',true],
+    ['e mínimo a igual volumen',[emCylV,emSphV],'mm',true]];
+  const tc=document.getElementById('m6_tabla_comp');
+  if(tc)tc.innerHTML=rows.map(rw=>{
+    const vCyl=rw[3]?rw[1][0]:cy(rw[1]), vSph=rw[3]?rw[1][1]:sp(rw[1]);
+    return '<tr class="border-b border-slate-800/80"><td class="py-1.5 text-slate-300">'+rw[0]+'</td>'+
+      '<td class="text-right text-white">'+f1(vCyl)+'</td><td class="text-right text-white">'+f1(vSph)+'</td>'+
+      '<td class="text-right text-emerald-300">'+f2(vSph/vCyl)+'</td></tr>';}).join('');
+  const rAt=emOth&&emThis?(isCyl?emOth/emThis:emThis/emOth):NaN;
+  P('m6_comp_note', crit==='vm'
+    ? 'Con von Mises la razón de espesores esfera/cilindro a igual r es '+f2(rAt)+' ≈ 1/√3 = 0,577, NO la mitad. Con Tresca sí sale exactamente 0,50, que es lo que da la diapositiva 198. Cambia el criterio arriba y compáralo.'
+    : (crit==='tresca'
+      ? 'Con Tresca la razón esfera/cilindro a igual r es '+f2(rAt)+' = 0,50 exacta: la esfera necesita la mitad de espesor. Con von Mises sale 0,577; el criterio importa.'
+      : 'Con tensión normal máxima la razón esfera/cilindro a igual r es '+f2(rAt)+': solo compara σ₁, que en el cilindro es el doble.'));
+
+  /* -- lectura guiada -- */
+  const box=document.getElementById('m6_lectura');
+  if(box){
+    const it=[];
+    const li=(ic,col,txt)=>it.push('<div class="flex gap-2 items-start"><i class="fa-solid '+ic+' '+col+' mt-0.5 w-4 text-center shrink-0"></i><p class="flex-1">'+txt+'</p></div>');
+    li(thin?'fa-circle-check':'fa-triangle-exclamation',thin?'text-emerald-400':'text-amber-400',
+      'r/e = <strong>'+f1(ratio)+'</strong>. '+(thin?'Se cumple r/e > 10: la hipótesis de pared delgada es válida.':'r/e ≤ 10: <strong>ya no es pared delgada</strong>, las fórmulas de Laplace dejan de valer y haría falta Lamé de pared gruesa.'));
+    li('fa-layer-group','text-indigo-400', isCyl
+      ? 'σ₁ = σcirc = p·r/e = <strong>'+f1(sc)+'</strong>, σ₂ = σaxial = p·r/2e = <strong>'+f1(sa)+'</strong>, σ₃ = σradial = <strong>'+f1(s3)+'</strong> MPa. La circunferencial es el <strong>doble</strong> que la axial.'
+      : 'σ₁ = σ₂ = p·r/2e = <strong>'+f1(sc)+'</strong> MPa en todas las direcciones del plano de la pared, y σ₃ = σradial = <strong>'+f1(s3)+'</strong> MPa.');
+    li('fa-circle-notch','text-purple-400', tPl<1e-9
+      ? 'τmáx <strong>en el plano de la pared es 0</strong> (el círculo es un punto), pero la τmáx absoluta vale <strong>'+f1(tAbs)+' MPa</strong> en planos a 45º que atraviesan el espesor. Que un círculo degenere no significa que no haya cortante.'
+      : 'τmáx en el plano de la pared = (σ₁−σ₂)/2 = <strong>'+f1(tPl)+'</strong> MPa; τmáx absoluta = (σ₁−σ₃)/2 = <strong>'+f1(tAbs)+'</strong> MPa. La absoluta manda, y está en planos que atraviesan el espesor.');
+    if(isCyl)li('fa-bolt','text-rose-400','Rompe por <strong>grieta longitudinal</strong>: la grieta se abre perpendicular a la tensión mayor, que es la circunferencial. Es la salchicha que se raja a lo largo.');
+    li(ok?'fa-circle-check':'fa-circle-xmark',ok?'text-emerald-400':'text-rose-400',
+      'Con '+(crit==='vm'?'von Mises':(crit==='tresca'?'Tresca':'tensión normal máxima'))+': σeq = '+f1(seq)+' frente a σadm = '+f1(sadm)+' MPa → <strong>'+(ok?'SEGURO':'FALLO')+'</strong> ('+f1(util)+' % de aprovechamiento). Espesor mínimo con este criterio: <strong>'+f1(m6Emin(geo,p,r,inner,crit,sadm))+' mm</strong>.');
+    if(isCyl&&sc>sa)li('fa-fire-flame-simple','text-amber-400','El cordón a 45º es el de mayor cortante: τ = (σcirc−σaxial)/2 = p·r/4e = <strong>'+f1((sc-sa)/2)+' MPa</strong>. Ese valor coincide con la τmáx absoluta de una <strong>esfera</strong> con la misma p, r y e — las dos valen p·r/4e.');
+    box.innerHTML=it.join('');
+  }
+}
+
+window.addEventListener('DOMContentLoaded',()=>{try{updateModule1();autoFitPlots();setM5Mode('direct');initM6();const d=document.getElementById('m3-mode-desc');if(d)d.innerHTML=M3_DESCS['A'];}catch(e){console.error('Init:',e);}});
+</script>
 </body>
 </html>
